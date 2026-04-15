@@ -1,0 +1,51 @@
+services:
+  db:
+    image: postgres:16
+    container_name: gameforge-db
+    environment:
+      POSTGRES_USER: gameforge
+      POSTGRES_PASSWORD: gameforge
+      POSTGRES_DB: gameforge
+    ports:
+      - "5432:5432"
+    volumes:
+      - D:\gameforge-data\pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gameforge -d gameforge"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+    container_name: gameforge-backend
+    env_file:
+      - ./backend/.env
+    environment:
+      DATABASE_URL: postgresql+psycopg2://gameforge:gameforge@db:5432/gameforge
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: gameforge-frontend
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+      REACT_APP_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    restart: unless-stopped

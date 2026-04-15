@@ -1,0 +1,368 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/gamifyont.owl"
+         xmlns="http://example.org/gamifyont.owl#">
+
+<owl:Ontology rdf:about="http://example.org/gamifyont.owl"/>
+
+<owl:ObjectProperty rdf:about="#hasSection">
+  <rdfs:domain rdf:resource="#SpecDocument"/>
+  <rdfs:range rdf:resource="#SpecSection"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#definesElement">
+  <rdfs:domain rdf:resource="#SpecSection"/>
+  <rdfs:range rdf:resource="#GameElement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#realizedAsUI">
+  <rdfs:domain rdf:resource="#GameElement"/>
+  <rdfs:range rdf:resource="#UIComponent"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#pointsValue">
+  <rdfs:domain rdf:resource="#Points"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#SpecDocument">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SpecSection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GameElement">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UIComponent">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Points">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GamificationProject">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Mechanic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Dynamic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Reward">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PlayerType">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#KPI">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Event">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Badge">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Leaderboard">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Level">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Quest">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Spec_3">
+  <rdf:type rdf:resource="#SpecDocument"/>
+  <hasSection rdf:resource="#Sec_3_s24__Conclusion"/>
+  <hasSection rdf:resource="#Sec_3_s06__Game_Mechanics"/>
+  <hasSection rdf:resource="#Sec_3_s09__Narrative_Framework"/>
+  <hasSection rdf:resource="#Sec_3_s17__Interface_Wireframes"/>
+  <hasSection rdf:resource="#Sec_3_s21__Implementation_Risks"/>
+  <hasSection rdf:resource="#Sec_3_s14__Gamified_User_Stories"/>
+  <hasSection rdf:resource="#Sec_3_s07__Emergent_Game_Dynamics"/>
+  <hasSection rdf:resource="#Sec_3_s08__Rewards_and_Incentives"/>
+  <hasSection rdf:resource="#Sec_3_s13__Detailed_Gameplay_Flow"/>
+  <hasSection rdf:resource="#Sec_3_s01__Introduction_and_Context"/>
+  <hasSection rdf:resource="#Sec_3_s03__Core_Learning_Objectives"/>
+  <hasSection rdf:resource="#Sec_3_s16__Illustrative_Storyboards"/>
+  <hasSection rdf:resource="#Sec_3_s10__Social_Interaction_Design"/>
+  <hasSection rdf:resource="#Sec_3_s15__Key_Interaction_Sequences"/>
+  <hasSection rdf:resource="#Sec_3_s19__Game_Management_Structure"/>
+  <hasSection rdf:resource="#Sec_3_s02__Simulation_Project_Context"/>
+  <hasSection rdf:resource="#Sec_3_s22__Data_Collection_and_Feedback"/>
+  <hasSection rdf:resource="#Sec_3_s18__Assessment_Framework_and_KPIs"/>
+  <hasSection rdf:resource="#Sec_3_s11__Customization_and_Adaptability"/>
+  <hasSection rdf:resource="#Sec_3_s23__Continuous_Improvement_Framework"/>
+  <hasSection rdf:resource="#Sec_3_s20__Execution_Log_and_Leaderboard_Design"/>
+  <hasSection rdf:resource="#Sec_3_s04__Participant_Profiles_and_Role_Mapping"/>
+  <hasSection rdf:resource="#Sec_3_s12__Tangible_Elements_and_Environmental_Setup"/>
+  <hasSection rdf:resource="#Sec_3_s05__Core_Gamification_Ontology__concept_to_game_element_mappings_"/>
+  <hasSection rdf:resource="#Sec_3_s25__Appendices__Role_sheets__card_catalogs__glossary__references_"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string (AI revision)</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s24__Conclusion">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s24::Conclusion</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This specification concludes by reinforcing a tightly coupled weekly cadence: a cybersecurity narrative structured in chapters provides thematic context for tasks, while measurement and reinforcement are driven by the weekly leaderboard and its governing KPIs. The primary KPI (WeeklyPoints) determines competitive standing, and the secondary KPI (TasksCompleted) provides operational accountability; both are defined over a weekly window aligned to the Monday reset.
+
+- Weekly KPI operationalization: WeeklyPoints is defined as the sum of point awards from completed weekly tasks whose completion timestamps fall within the active weekly window bounded by the Monday reset; TasksCompleted is the count of valid task completion events in the same window.
+- Leaderboard policy: The weekly leaderboard ranks participants strictly by WeeklyPoints and resets every Monday; no inter-week carry-over of WeeklyPoints occurs, and rankings after reset reflect only points earned post-reset.
+- Task-to-point determinism: Each weekly task carries a predefined point value; only a successful completion event awards points and increments TasksCompleted, while partial progress and failed attempts do not affect either KPI.
+- Narrative continuity: Chapter progression in the cybersecurity story arc persists across weeks and is orthogonal to leaderboard resets; weekly tasks are contextualized by the player’s current chapter without altering KPI semantics.
+- Temporal integrity: All task completion events are timestamped using system time; events occurring after the Monday reset are attributed exclusively to the new weekly window, ensuring unambiguous KPI computation.
+- Measurement readiness: Event logs supporting WeeklyPoints and TasksCompleted are retained at sufficient granularity to allow weekly aggregation, verification, and audit of KPI calculations without reliance on UI state.
+
+Acceptance criteria:
+1) On the Monday reset, any user with nonzero WeeklyPoints from the prior week appears on the weekly leaderboard with 0 WeeklyPoints until they complete new weekly tasks in the new window.
+2) If a user completes tasks worth 10, 20, and 30 points within the same weekly window, their WeeklyPoints equals 60; completing an additional task after the Monday reset does not change the prior week’s WeeklyPoints.
+3) Within a weekly window, TasksCompleted equals the count of successful weekly task completion events (N) and resets to 0 at the Monday reset; starting but not completing tasks does not increment TasksCompleted.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s06__Game_Mechanics">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s06::Game Mechanics</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section defines the operational rules that convert weekly cybersecurity training tasks into measurable progress within a chapter-based narrative, aligning strictly with the Primary KPI (WeeklyPoints) and Secondary KPI (TasksCompleted) while supporting a weekly leaderboard that resets every Monday.
+
+- Weekly cycle and reset: The game week is defined as Monday 00:00:00 UTC to Sunday 23:59:59 UTC. At each Monday 00:00:00 UTC reset, WeeklyPoints for all learners are set to 0 for the new week, while lifetime TasksCompleted remains cumulative for progression analytics; the leaderboard displays only the current week’s WeeklyPoints.
+- Point allocation per task: On validated completion of a unique weekly task instance, award WeeklyPoints using a base of 100 points with difficulty multipliers: Easy=0.5 (50 points), Medium=1.0 (100 points), Hard=2.0 (200 points). Each unique task ID yields points at most once per learner per week.
+- Weekly milestone bonuses: Within a single week, award additive milestone bonuses when reaching task-count thresholds: at 3 tasks = +50 WeeklyPoints; at 5 tasks = +100 WeeklyPoints; at 8 tasks = +200 WeeklyPoints. Bonuses stack and are granted at the time the threshold is reached; no penalties or negative points are applied.
+- Leaderboard ranking rule: Order learners by WeeklyPoints (desc). First tie-breaker: TasksCompleted within the current week (desc). Second tie-breaker: earlier timestamp of last WeeklyPoints change in the current week (asc).
+- Chapter progression gating: Content is organized into chapters in the cybersecurity story arc. Chapter n+1 unlocks when lifetime TasksCompleted ≥ 10 × n (e.g., unlock Chapter 2 at 10, Chapter 3 at 20). Weekly resets do not affect chapter unlock status.
+- Task validity constraints: Points are granted only on successful, system-validated completion events; repeated attempts of the same weekly task instance do not yield additional points. If an equivalent task is re-issued in a later week as a new instance, it is eligible for points again in that new week.
+- Data integrity and auditability: All KPI computations (WeeklyPoints, TasksCompleted) occur server-side with immutable event logs for completions and bonus grants, enabling reproducible weekly totals and verifiable leaderboard outcomes.
+
+Acceptance criteria:
+1) Weekly reset behavior: Given a learner with WeeklyPoints=450 and lifetime TasksCompleted=37 at Sunday 23:59:59 UTC, then at Monday 00:00:00 UTC their WeeklyPoints becomes 0, their lifetime TasksCompleted remains 37, and the weekly leaderboard reflects the reset (no carryover points).
+2) Points and bonuses calculation: If in a single week a learner completes 2 Medium, 1 Hard, and 1 Easy tasks (validated, unique IDs), then WeeklyPoints = (2×100) + (1×200) + (1×50) + milestone at 3 tasks (+50) = 500; weekly TasksCompleted increases by 4.
+3) Deterministic leaderboard ordering: If Learner A has WeeklyPoints=500 and weekly TasksCompleted=6, and Learner B has WeeklyPoints=500 and weekly TasksCompleted=5, then A ranks higher; if Learner C also has 500 points and 6 weekly tasks but A’s last points timestamp is earlier within the week than C’s, then A ranks higher than C.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s09__Narrative_Framework">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s09::Narrative Framework</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cybersecurity story arc with chapters.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s17__Interface_Wireframes">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s17::Interface Wireframes</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The interface wireframes specify three primary views—Chapters, Weekly Tasks, and Weekly Leaderboard—organized around a persistent KPI bar to foreground WeeklyPoints (primary KPI) and TasksCompleted (secondary KPI). Components are minimized to those implied by the narrative and weekly competition loop, with measurable behaviors defined for consistency and evaluation.
+
+- Persistent KPI bar (visible on all views): displays WeeklyPoints (integer), TasksCompleted (this week, integer), and a countdown to the next weekly reset; values update within 1 second of any task completion and remain consistent across views.
+- Primary navigation tabs: three tabs labeled Chapters, Weekly Tasks, and Leaderboard; the active tab is indicated; navigation does not alter KPI bar content; switching tabs occurs within 300 ms on a standard connection.
+- Chapters view: list of chapter cards (sorted by chapter number ascending) each showing chapter title, one-line synopsis, lock/unlock status, and a “this week: x tasks completed” indicator for that chapter; selecting a chapter takes the user to Weekly Tasks pre-filtered to that chapter.
+- Weekly Tasks view: list of current-week tasks with task title, chapter tag, point value, and status (Locked/In Progress/Completed), plus a “This week: x/y tasks completed” summary; completing a task immediately awards its point value to WeeklyPoints and increments TasksCompleted by 1.
+- Weekly Leaderboard view: table with columns Rank, Name, WeeklyPoints; current user row is pinned/always visible; sorting is by WeeklyPoints (desc), ties broken by TasksCompleted (desc), then earliest last-completion timestamp (asc); a label shows “Resets Monday 00:00 UTC.”
+- Weekly cycle indicators: the countdown displays days:hours:minutes to Monday 00:00 UTC; upon reaching zero, WeeklyPoints and this-week TasksCompleted reset to 0 and the leaderboard reorders within 60 seconds; historical totals are unaffected.
+
+Acceptance criteria:
+1) The KPI bar appears identically on Chapters, Weekly Tasks, and Leaderboard and shows WeeklyPoints and this-week TasksCompleted values that match backend data; after any task completion, both counters reflect new values within 1 second.
+2) At precisely Monday 00:00 UTC, the Weekly Leaderboard resets: all entries display WeeklyPoints = 0, and subsequent ranks are computed by WeeklyPoints (desc), with ties resolved by TasksCompleted (desc) then earliest last-completion timestamp (asc); the current user’s row remains visible.
+3) Completing a Weekly Task updates UI state atomically: the task status changes to Completed, WeeklyPoints increases by the task’s defined point value, TasksCompleted increases by 1, and any change in leaderboard rank is visible within 2 seconds.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s21__Implementation_Risks">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s21::Implementation Risks</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section enumerates key implementation risks that could undermine the integrity of the weekly cybersecurity training game, with emphasis on measurable behavior aligned to the primary KPI (WeeklyPoints), the secondary KPI (TasksCompleted), the Monday-reset leaderboard cadence, and the chapter-based narrative arc.
+
+- Ambiguous KPI semantics: Inconsistent definitions of WeeklyPoints or TasksCompleted across services or environments may yield discrepant totals and rankings; require a single authoritative scoring specification and consistent event schemas to ensure reproducible computation.
+- Reset boundary conditions: Mismanaged Monday resets (timezone, daylight saving shifts, clock skew) can cause premature or delayed resets, double-counting, or loss of WeeklyPoints; mandate a configurable system timezone, atomic reset operations, and idempotent scheduling.
+- Event latency and eventual consistency: Delayed task completion events near the reset boundary may be attributed to the wrong week, distorting WeeklyPoints and leaderboard positions; implement watermarking/time-windowing rules and verifiable late-arrival handling.
+- Narrative coupling risk: Improper linkage between chapters and weekly tasks may block progression or leak points across weeks; ensure chapter progression state is independent from WeeklyPoints resets and that cross-week tasks do not alter past-week totals.
+- Fairness and exploit risk: Users may inflate WeeklyPoints via automation or repetitive low-effort behaviors; require instrumentation for anomaly detection, rate-limit enforcement on task submissions, and auditable scoring to deter and detect abuse.
+- Leaderboard determinism: Absent a documented tie-handling policy and snapshotting, rankings may flicker or appear inconsistent across reads; ensure a single, deterministic ordering aligned with KPIs and consistent read views around reset.
+- Data integrity and auditability: Lack of immutable logs for scoring, resets, and chapter changes impedes reconciliation after incidents; maintain append-only audit trails to support verification of KPI calculations and reset execution.
+
+Acceptance criteria:
+1) Weekly reset correctness: At the configured system timezone’s Monday 00:00, WeeklyPoints are reset atomically and the leaderboard reflects zero WeeklyPoints for all users within 1 minute; tasks timestamped before reset contribute only to the prior week, and tasks after reset contribute only to the new week, verified by boundary tests at T_reset−5m, T_reset−1s, T_reset+1s, T_reset+5m.
+2) KPI determinism and reproducibility: Given a fixed set of task completion events with defined timestamps and point values within a week, the computed WeeklyPoints equals the sum of included events and TasksCompleted equals the count; recomputation from the same event log yields identical results and excludes events outside the weekly window.
+3) Narrative-state isolation: Executing a weekly reset does not modify any user’s chapter progression; pre/post-reset snapshots of chapter state for a test cohort are bitwise identical, while WeeklyPoints are zeroed and leaderboard order is reinitialized.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s14__Gamified_User_Stories">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s14::Gamified User Stories</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section articulates user stories for a chaptered cybersecurity training experience governed by a weekly cadence, where competitive dynamics are driven by a Monday-reset leaderboard and performance is evaluated through the primary KPI (WeeklyPoints) and the secondary KPI (TasksCompleted). The stories emphasize measurable outcomes, auditability, and alignment with the narrative arc.
+
+- As a Learner, I want to complete weekly cybersecurity tasks that award WeeklyPoints and increment TasksCompleted, so that I can progress through the current chapter of the story arc.
+- As a Learner, I want tasks to have explicit, pre-declared point values that aggregate into WeeklyPoints, so that I can plan my weekly effort against clear performance targets.
+- As a Learner, I want the weekly leaderboard to reflect only the current week’s WeeklyPoints and to reset every Monday at 00:00 (platform-configured time zone), so that rankings represent timely performance.
+- As a Learner, I want leaderboard ties to be resolved first by higher TasksCompleted and then by earlier completion time, so that ranking is consistent with stated KPIs and fair in edge cases.
+- As a Learner, I want the next narrative chapter to unlock when I meet defined weekly performance thresholds (e.g., WeeklyPoints ≥ 100 or TasksCompleted ≥ 5 within the current week), so that story progression is merit-based and transparent.
+- As a System, I want to timestamp and attribute each task completion to a weekly window and chapter context, so that WeeklyPoints and TasksCompleted are auditable and reproducible.
+- As a System, I want cumulative chapter progression to persist across weekly KPI resets, so that the narrative arc continues even as competitive metrics restart each week.
+
+Acceptance criteria:
+- KPI computation and reset: For each learner, WeeklyPoints equals the sum of point values for unique tasks completed between Monday 00:00 and the next Monday 00:00 (platform-configured time zone), and resets to 0 at the boundary; TasksCompleted equals the count of unique tasks completed in that window; retries of the same task within the week do not add points or completions more than once.
+- Leaderboard ordering and reset: At any query time, the weekly leaderboard sorts learners by WeeklyPoints (desc), then TasksCompleted (desc), then earliest timestamp of the last contributing completion (asc); the leaderboard reflects only records from the current weekly window and reinitializes at each Monday 00:00 reset.
+- Chapter unlock gating: The next narrative chapter becomes available to a learner when, within a single weekly window, either WeeklyPoints ≥ 100 or TasksCompleted ≥ 5 is achieved; once unlocked, chapter access persists across subsequent weekly resets irrespective of later KPI values.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s07__Emergent_Game_Dynamics">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s07::Emergent Game Dynamics</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s08__Rewards_and_Incentives">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s08::Rewards and Incentives</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[Academic and explanatory] Draft suggestion for section: Rewards and Incentives
+Context: Cybersecurity training, weekly tasks, points and levels
+- Reward types: points, badges, level progression
+- Reward triggers: task completion, weekly streak bonuses
+- Anti-cheat: daily limits and duplicate task prevention
+- Feedback: instant notification and weekly summary
+
+Acceptance Criteria:
+1. Section contains explanatory text.
+2. At least three actionable requirements exist.
+3. Output format or evaluation metric is defined.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s13__Detailed_Gameplay_Flow">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s13::Detailed Gameplay Flow</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s01__Introduction_and_Context">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s01::Introduction and Context</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s03__Core_Learning_Objectives">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s03::Core Learning Objectives</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s16__Illustrative_Storyboards">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s16::Illustrative Storyboards</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s10__Social_Interaction_Design">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s10::Social Interaction Design</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s15__Key_Interaction_Sequences">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s15::Key Interaction Sequences</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s19__Game_Management_Structure">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s19::Game Management Structure</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s02__Simulation_Project_Context">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s02::Simulation/Project Context</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s22__Data_Collection_and_Feedback">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s22::Data Collection and Feedback</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Collect TaskCompleted events, WeeklyPoints aggregation, and user feedback surveys.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s18__Assessment_Framework_and_KPIs">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s18::Assessment Framework and KPIs</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Primary KPI: WeeklyPoints. Secondary: TasksCompleted.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s11__Customization_and_Adaptability">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s11::Customization and Adaptability</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s23__Continuous_Improvement_Framework">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s23::Continuous Improvement Framework</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s20__Execution_Log_and_Leaderboard_Design">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s20::Execution Log and Leaderboard Design</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weekly leaderboard resets every Monday.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s04__Participant_Profiles_and_Role_Mapping">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s04::Participant Profiles and Role-Mapping</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s12__Tangible_Elements_and_Environmental_Setup">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s12::Tangible Elements and Environmental Setup</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s05__Core_Gamification_Ontology__concept_to_game_element_mappings_">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s05::Core Gamification Ontology (concept-to-game-element mappings)</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_3_s25__Appendices__Role_sheets__card_catalogs__glossary__references_">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s25::Appendices (Role sheets, card catalogs, glossary, references)</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Leaderboard_3">
+  <rdf:type rdf:resource="#Leaderboard"/>
+  <realizedAsUI rdf:resource="#LeaderboardUI_3"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#LeaderboardUI_3">
+  <rdf:type rdf:resource="#UIComponent"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#KPI_WeeklyPoints_3">
+  <rdf:type rdf:resource="#KPI"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#KpiDashboardUI_3">
+  <rdf:type rdf:resource="#UIComponent"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#NarrativePanelUI_3">
+  <rdf:type rdf:resource="#UIComponent"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Badge_3">
+  <rdf:type rdf:resource="#Badge"/>
+  <realizedAsUI rdf:resource="#BadgeGalleryUI_3"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#BadgeGalleryUI_3">
+  <rdf:type rdf:resource="#UIComponent"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Points_3">
+  <rdf:type rdf:resource="#Points"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

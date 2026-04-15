@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/gamifyont.owl"
+         xmlns="http://example.org/gamifyont.owl#">
+
+<owl:Ontology rdf:about="http://example.org/gamifyont.owl"/>
+
+<owl:ObjectProperty rdf:about="#hasSection">
+  <rdfs:domain rdf:resource="#SpecDocument"/>
+  <rdfs:range rdf:resource="#SpecSection"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#definesElement">
+  <rdfs:domain rdf:resource="#SpecSection"/>
+  <rdfs:range rdf:resource="#GameElement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#realizedAsUI">
+  <rdfs:domain rdf:resource="#GameElement"/>
+  <rdfs:range rdf:resource="#UIComponent"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#pointsValue">
+  <rdfs:domain rdf:resource="#Points"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#GamificationProject">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SpecDocument">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SpecSection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GameElement">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Mechanic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Dynamic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Reward">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PlayerType">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#KPI">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Event">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UIComponent">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Points">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Badge">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Leaderboard">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Level">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Quest">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<!-- HEXAD archetypes (subclasses of PlayerType) for semantic queries -->
+<owl:Class rdf:about="#Hexad_Achiever">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Achiever (HEXAD)</rdfs:label>
+</owl:Class>
+<owl:Class rdf:about="#Hexad_Player">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Player / Reward-oriented (HEXAD)</rdfs:label>
+</owl:Class>
+<owl:Class rdf:about="#Hexad_Socializer">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Socializer (HEXAD)</rdfs:label>
+</owl:Class>
+<owl:Class rdf:about="#Hexad_FreeSpirit">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Free Spirit (HEXAD)</rdfs:label>
+</owl:Class>
+<owl:Class rdf:about="#Hexad_Philanthropist">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Philanthropist (HEXAD)</rdfs:label>
+</owl:Class>
+<owl:Class rdf:about="#Hexad_Disruptor">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Disruptor (HEXAD)</rdfs:label>
+</owl:Class>
+
+<!-- Bartle types (distinct from HEXAD Achiever) -->
+<owl:Class rdf:about="#Bartle_Achiever">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Achiever (Bartle)</rdfs:label>
+</owl:Class>
+<owl:Class rdf:about="#Bartle_Explorer">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Explorer (Bartle)</rdfs:label>
+</owl:Class>
+<owl:Class rdf:about="#Bartle_Socializer">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Socializer (Bartle)</rdfs:label>
+</owl:Class>
+<owl:Class rdf:about="#Bartle_Killer">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Killer (Bartle)</rdfs:label>
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="#appealsTo">
+  <rdfs:domain rdf:resource="#GameElement"/>
+  <rdfs:range rdf:resource="#PlayerType"/>
+  <rdfs:comment>Links a game element to player types it is designed to motivate (demo axioms for SPARQL).</rdfs:comment>
+</owl:ObjectProperty>
+
+<!-- Demo individuals: query with SPARQL for ?el go:appealsTo go:Hexad_Achiever -->
+<owl:NamedIndividual rdf:about="#Demo_Element_Badge">
+  <rdf:type rdf:resource="#Badge"/>
+  <appealsTo rdf:resource="#Hexad_Achiever"/>
+  <appealsTo rdf:resource="#Bartle_Achiever"/>
+</owl:NamedIndividual>
+<owl:NamedIndividual rdf:about="#Demo_Element_Leaderboard">
+  <rdf:type rdf:resource="#Leaderboard"/>
+  <appealsTo rdf:resource="#Hexad_Player"/>
+  <appealsTo rdf:resource="#Bartle_Killer"/>
+</owl:NamedIndividual>
+<owl:NamedIndividual rdf:about="#Demo_Element_Quest">
+  <rdf:type rdf:resource="#Quest"/>
+  <appealsTo rdf:resource="#Hexad_FreeSpirit"/>
+  <appealsTo rdf:resource="#Bartle_Explorer"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

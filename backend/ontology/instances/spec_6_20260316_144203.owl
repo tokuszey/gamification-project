@@ -1,0 +1,561 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/gamifyont.owl"
+         xmlns="http://example.org/gamifyont.owl#">
+
+<owl:Ontology rdf:about="http://example.org/gamifyont.owl"/>
+
+<owl:ObjectProperty rdf:about="#hasSection">
+  <rdfs:domain rdf:resource="#SpecDocument"/>
+  <rdfs:range rdf:resource="#SpecSection"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#definesElement">
+  <rdfs:domain rdf:resource="#SpecSection"/>
+  <rdfs:range rdf:resource="#GameElement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#realizedAsUI">
+  <rdfs:domain rdf:resource="#GameElement"/>
+  <rdfs:range rdf:resource="#UIComponent"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#pointsValue">
+  <rdfs:domain rdf:resource="#Points"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#SpecDocument">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SpecSection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GameElement">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UIComponent">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Points">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GamificationProject">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Mechanic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Dynamic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Reward">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PlayerType">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#KPI">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Event">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Badge">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Leaderboard">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Level">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Quest">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Spec_10">
+  <rdf:type rdf:resource="#SpecDocument"/>
+  <hasSection rdf:resource="#Sec_10_s24__Conclusion"/>
+  <hasSection rdf:resource="#Sec_10_s06__Game_Mechanics"/>
+  <hasSection rdf:resource="#Sec_10_s09__Narrative_Framework"/>
+  <hasSection rdf:resource="#Sec_10_s17__Interface_Wireframes"/>
+  <hasSection rdf:resource="#Sec_10_s21__Implementation_Risks"/>
+  <hasSection rdf:resource="#Sec_10_s14__Gamified_User_Stories"/>
+  <hasSection rdf:resource="#Sec_10_s07__Emergent_Game_Dynamics"/>
+  <hasSection rdf:resource="#Sec_10_s08__Rewards_and_Incentives"/>
+  <hasSection rdf:resource="#Sec_10_s13__Detailed_Gameplay_Flow"/>
+  <hasSection rdf:resource="#Sec_10_s01__Introduction_and_Context"/>
+  <hasSection rdf:resource="#Sec_10_s03__Core_Learning_Objectives"/>
+  <hasSection rdf:resource="#Sec_10_s16__Illustrative_Storyboards"/>
+  <hasSection rdf:resource="#Sec_10_s10__Social_Interaction_Design"/>
+  <hasSection rdf:resource="#Sec_10_s15__Key_Interaction_Sequences"/>
+  <hasSection rdf:resource="#Sec_10_s19__Game_Management_Structure"/>
+  <hasSection rdf:resource="#Sec_10_s02__Simulation_Project_Context"/>
+  <hasSection rdf:resource="#Sec_10_s22__Data_Collection_and_Feedback"/>
+  <hasSection rdf:resource="#Sec_10_s18__Assessment_Framework_and_KPIs"/>
+  <hasSection rdf:resource="#Sec_10_s11__Customization_and_Adaptability"/>
+  <hasSection rdf:resource="#Sec_10_s23__Continuous_Improvement_Framework"/>
+  <hasSection rdf:resource="#Sec_10_s20__Execution_Log_and_Leaderboard_Design"/>
+  <hasSection rdf:resource="#Sec_10_s04__Participant_Profiles_and_Role_Mapping"/>
+  <hasSection rdf:resource="#Sec_10_s12__Tangible_Elements_and_Environmental_Setup"/>
+  <hasSection rdf:resource="#Sec_10_s05__Core_Gamification_Ontology__concept_to_game_element_mappings_"/>
+  <hasSection rdf:resource="#Sec_10_s25__Appendices__Role_sheets__card_catalogs__glossary__references_"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GameForge UI Demo Spec</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s24__Conclusion">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s24::Conclusion</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This specification consolidates a coherent, measurable framework for a cybersecurity training game that links weekly tasks to points, levels, and visible progression, and evaluates participant engagement and learning outcomes through explicit KPIs and ethically designed leaderboard dynamics, thereby aligning gameplay incentives with the program’s security objectives.
+
+- Reinforces objectives by mapping weekly task completion to points and level progression, ensuring that skill acquisition and retention are the primary drivers of advancement.
+- Establishes measurable KPIs (e.g., task completion rate, time-to-completion, accuracy on scenario-based challenges, phishing simulation pass rates) to quantify learning impact and behavioral change over time.
+- Utilizes a leaderboard to surface sustained, high-quality performance (weighted for recency and task difficulty), while mitigating unhealthy competition through transparency of scoring logic and safeguards against point farming.
+- Supports progression pacing via weekly cadences and tiered levels, enabling predictable workload, gradual difficulty scaling, and clear indicators of mastery.
+- Aligns incentives with cybersecurity outcomes by awarding higher points for high-value tasks (e.g., secure configuration, incident response drills) and for consistent weekly participation.
+- Provides feedback loops by translating KPI trends into progression and recognition, guiding learners toward targeted remediation where performance lags.
+- Ensures data integrity and fairness by defining scoring rules, auditability of point events, and controls to prevent duplicate credit or gaming of tasks.
+- Facilitates continuous improvement through periodic KPI reviews, allowing recalibration of task weights, leaderboard parameters, and level thresholds to maintain rigor and relevance.
+
+Acceptance criteria:
+1) The conclusion explicitly references leaderboard use, weekly task cadence, points-to-levels progression, and measurable KPIs as aligned with stated objectives.
+2) The document defines at least three concrete KPIs tied to cybersecurity learning outcomes and describes how they influence progression or recognition.
+3) The conclusion notes fairness and integrity measures for scoring/leaderboard and connects these to objective-aligned, ethical competition.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s06__Game_Mechanics">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s06::Game Mechanics</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section specifies the core game mechanics that translate weekly cybersecurity learning activities into quantifiable progress, competitive standing, and measurable outcomes. Mechanics emphasize rigor (task difficulty and accuracy), fairness (anti-gaming safeguards), and transparency (deterministic scoring and clear progression), thereby supporting both learner motivation and KPI-driven evaluation.
+
+- Weekly task cadence: A curated set of domain-tagged tasks (e.g., phishing analysis, secure configuration, incident response) is released each week with defined difficulty tiers (Easy/Medium/Hard), an explicit completion window, and optional late submission with proportional point reduction.
+- Scoring model: Each task yields base points by difficulty, adjusted by performance modifiers (accuracy, first-attempt success, and time-to-completion) and debited for hints and retries; points are capped per task to prevent inflation and ensure comparability.
+- Levels and progression: Cumulative points convert to levels via explicit thresholds; higher levels unlock access to more complex tasks and confer non-intrusive recognition (e.g., badges), without conferring scoring advantages that would bias leaderboards.
+- Leaderboard ranking: The leaderboard ranks participants primarily by weekly points to emphasize current engagement, with deterministic tie-breakers (lower median time-to-completion, then higher accuracy); an all-time view aggregates cumulative performance for longitudinal comparison.
+- Streak and engagement mechanics: Consecutive on-time weekly completions increment a modest multiplier applied to weekly totals; missed weeks reset the multiplier, while partial participation avoids punitive zeroing by granting proportional credit.
+- KPI instrumentation: Telemetry records completion rate, average time-to-completion, first-attempt success, error categories, hint usage, and retry counts; aggregated measures provide mastery indices per objective and enable cohort-level benchmarking.
+- Integrity and fairness: Randomized task variants, cooldowns between retries, and similarity checks mitigate collusion and answer sharing; all modifiers (bonuses and penalties) are disclosed to participants to support informed strategy and ethical play.
+
+AC1: Given any set of completed weekly tasks with known attributes (difficulty, accuracy, attempts, hint usage, and completion time), the system produces a deterministic point total that increases monotonically with accuracy and decreases (or remains unchanged) with additional hints and retries, never exceeding the per-task cap.  
+AC2: When a participant’s cumulative points meet or exceed a published level threshold, their level updates immediately and persists across weeks; subsequent task assignment pools reflect the new level without altering previously recorded scores.  
+AC3: At the close of each week, the leaderboard reflects all completions within 60 seconds and ranks participants by weekly points with the specified tie-breakers; concurrently, the platform can generate participant- and cohort-level KPIs (completion rate, average time-to-completion, first-attempt success, hint usage) for that week.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s09__Narrative_Framework">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s09::Narrative Framework</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The narrative frames learners as analysts in a cyber defense unit advancing through weekly incident-response episodes; points and levels signify professional growth, the leaderboard contextualizes cohort performance, and measurable KPIs are embedded as diegetic indicators of competence and impact.
+
+- Player role and setting: learners begin as junior analysts within a Security Operations function and progress toward senior incident responder roles, mirroring real-world cybersecurity career trajectories.
+- Episodic structure: a seasonal arc is divided into weekly missions (threat-of-the-week) composed of sequential tasks that simulate reconnaissance, detection, containment, eradication, and post-incident review.
+- Objectives alignment: each task is explicitly mapped to learning objectives (e.g., phishing triage, log correlation, vulnerability prioritization), ensuring narrative beats directly exercise target competencies.
+- Progression mechanics: points accrue from task performance (accuracy, efficiency, safe decision-making), unlock levels that introduce broader threat classes and increased procedural autonomy, and gate access to advanced mission variants.
+- Leaderboard integration: weekly ranks are derived from normalized KPI composites (e.g., completion rate, accuracy, time-to-resolution, reduced hint reliance), enabling fair cross-learner comparison while preserving constructive competition.
+- KPI instrumentation: narrative events emit measurable signals tied to objectives (e.g., correct flag identification, false-positive avoidance), supporting mastery tracking over weeks and enabling trend analysis of skill acquisition.
+- Difficulty adaptation: branching within missions adjusts complexity based on prior KPI performance to sustain optimal challenge without compromising comparability for leaderboard placement.
+- Motivational and ethical framing: the story emphasizes protecting users and infrastructure, rewarding collaboration and knowledge sharing while discouraging risky shortcuts or metric-gaming.
+
+Acceptance criteria:
+- For every weekly mission, each task has a documented mapping to at least one learning objective and at least one KPI with clear operational definitions, scoring rules, and mastery thresholds.
+- Progression rules specify point and level thresholds, gating logic, and unlock conditions, and these enable consistent advancement across weeks without narrative dead-ends; adaptation maintains KPI measurability and fairness.
+- Leaderboard rankings are computed from a published, normalized KPI formula with defined tie-breaking and anti-gaming safeguards, and update on a weekly cadence aligned with mission completion.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s17__Interface_Wireframes">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s17::Interface Wireframes</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This wireframe set specifies canonical views that embody the incident-response narrative while embedding measurable KPIs, weekly mission structure, points-and-level progression, and a normalized weekly leaderboard. Layouts prioritize diegetic presentation (SOC-style console metaphors) so that competence signals are surfaced as part of the simulation rather than ornamental overlays.
+
+- Global frame and status bar: persistent header with player role/level, current points and progress-to-next-level meter, active week indicator, and a compact KPI composite badge; left nav anchors to Mission Overview, Task Workspace (active task), Leaderboard, and Weekly Debrief to respect the episodic cadence.
+- Weekly Mission Overview: mission brief (threat-of-the-week), linear task timeline labeled Recon → Detect → Contain → Eradicate → Review; each task tile shows objective tags (e.g., “phishing triage”), gated/ungated state, estimated duration, and KPI icons (accuracy, time-to-resolution, completion, hint reliance) with legend; branching forks are indicated with standardized-task markers to preserve leaderboard comparability.
+- Task Workspace (Incident Console): two-pane layout with evidence panel (logs/email headers/artifacts) and action panel (decision set, rationale field, submit/confirm); right rail hosts the KPI HUD updating accuracy and elapsed time; contextual alerts communicate safe decision-making consequences; points awarded on submission are shown with rationales tied to operational scoring rules.
+- KPI HUD (diegetic indicators): vertically stacked meters for normalized composite, accuracy, time-to-resolution clock, completion progress, and hint usage; each meter labeled with mastery threshold bands; hover/tooltips expose operational definitions; meters are visible during tasks and summarized post-task to support reflection without enabling metric gaming.
+- Leaderboard (weekly ranking): table of cohort ranks computed from the normalized KPI composite, with per-KPI drill-down toggle for each row; learner is highlighted; tie-breaker indicator column and footnote describing formula and safeguards; filter for week selection defaults to current week and locks until mission close.
+- Weekly Debrief and Progression: summary panel with per-objective mastery status, KPI deltas versus prior week (sparklines), total points earned, level-up notification with thresholds, and explicit unlocks for advanced variants; notes identify which tasks contributed to leaderboard scoring versus adaptive branches.
+
+Acceptance criteria:
+1) Mission Overview and Task Workspace wireframes display objective tags per task and surface KPI indicators (accuracy, time-to-resolution, completion, hint reliance) with labels aligned to operational definitions; submission feedback references the same scoring rules and mastery thresholds.
+2) Progression elements visibly include current points, level, threshold to next level, and gating/lock states for advanced variants; branching markers indicate standardized leaderboard tasks to maintain fairness and KPI comparability across adaptations.
+3) Leaderboard wireframe presents a normalized composite score with per-KPI drill-down, shows tie-breaking logic and anti-gaming notes, and indicates a weekly update timestamp aligned to mission closure; Weekly Debrief depicts per-objective mastery and KPI trends and confirms any level unlocks.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s21__Implementation_Risks">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s21::Implementation Risks</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The implementation of a cybersecurity training game with weekly missions, points, levels, and a KPI-driven leaderboard introduces specific risks to measurement validity, fairness, ethics, data protection, and operational reliability; anticipating these risks and codifying mitigations is essential to preserve the narrative’s instructional integrity and ensure that KPIs and progression signals remain trustworthy across adaptive branches and cohorts.
+
+- KPI validity and reliability risk: poorly specified or weakly instrumented KPIs (e.g., over-weighting time-to-resolution) may misrepresent competence, encourage unsafe shortcuts, or diverge from mapped learning objectives, undermining both mastery inference and progression gates.
+- Normalization and fairness risk: composite KPI formulas may not fully correct for adaptive branching or mission variant difficulty, leading to leaderboard distortion, cohort comparability issues, and demotivation among learners facing more complex branches.
+- Instrumentation integrity risk: event loss, clock drift, client-side tampering, or inconsistent scoring logic can degrade data quality, break mastery thresholds, and yield volatile weekly rankings that are not reproducible.
+- Metric-gaming and collusion risk: behaviors such as intentional sandbagging, excessive hint probing, coordinated answer sharing, or scripted replay can inflate points/KPIs without genuine learning, eroding leaderboard credibility.
+- Privacy, compliance, and ethics risk: telemetry tied to incidents and free-text inputs may capture personally identifiable or sensitive organizational information; inadequate governance could breach GDPR/FERPA-like obligations and violate the motivational/ethical framing.
+- Scalability and operational risk: weekly KPI aggregation and leaderboard updates across large cohorts may exceed processing budgets or SLAs, producing delayed feedback, stale rankings, or partial updates that confuse progression.
+- Content and narrative consistency risk: rapid content production for weekly episodes can introduce ambiguity, biased distractors, or mislabeled “correct” flags, breaking the objectives–KPI mapping and compromising fair scoring across variants.
+- Simulation safety and security risk: realistic artifacts (e.g., payload samples, logs) and platform integrations may introduce attack surfaces or unsafe assets if not sandboxed and vetted, posing reputational and operational hazards.
+
+Acceptance criteria:
+- Measurement and fairness validation: a pilot across ≥3 cohorts (n≥100) demonstrates that implemented KPI operational definitions and the normalized leaderboard composite achieve test–retest or split-half reliability ≥0.80, show no statistically significant bias by adaptive branch or device (α=0.05), and produce deterministic tie-breaking; results and formulas are documented and published to stakeholders.
+- Data governance and security: a data inventory and retention policy (≤12 months for raw telemetry) is approved; only pseudonymous learner IDs are stored; encryption in transit (TLS 1.2+) and at rest (AES-256) is enabled; access is role-based and audited; a security review with penetration testing closes all P1/P2 findings; simulated artifacts are sandboxed and cleared by threat modeling.
+- Operational robustness and integrity: instrumentation coverage spans ≥95% of scored task events with end-to-end event loss &lt;0.5%; anti-gaming analytics detect &gt;90% of seeded exploit patterns with &lt;5% false positives; weekly leaderboard recomputation for 10k learners completes in &lt;10 minutes under load, with monitored rollback and reprocessing procedures validated in a dry run.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s14__Gamified_User_Stories">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s14::Gamified User Stories</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s07__Emergent_Game_Dynamics">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s07::Emergent Game Dynamics</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s08__Rewards_and_Incentives">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s08::Rewards and Incentives</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s13__Detailed_Gameplay_Flow">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s13::Detailed Gameplay Flow</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s01__Introduction_and_Context">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s01::Introduction and Context</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s03__Core_Learning_Objectives">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s03::Core Learning Objectives</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s16__Illustrative_Storyboards">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s16::Illustrative Storyboards</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s10__Social_Interaction_Design">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s10::Social Interaction Design</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s15__Key_Interaction_Sequences">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s15::Key Interaction Sequences</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s19__Game_Management_Structure">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s19::Game Management Structure</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s02__Simulation_Project_Context">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s02::Simulation/Project Context</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s22__Data_Collection_and_Feedback">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s22::Data Collection and Feedback</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s18__Assessment_Framework_and_KPIs">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s18::Assessment Framework and KPIs</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s11__Customization_and_Adaptability">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s11::Customization and Adaptability</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s23__Continuous_Improvement_Framework">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s23::Continuous Improvement Framework</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s20__Execution_Log_and_Leaderboard_Design">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s20::Execution Log and Leaderboard Design</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s04__Participant_Profiles_and_Role_Mapping">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s04::Participant Profiles and Role-Mapping</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s12__Tangible_Elements_and_Environmental_Setup">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s12::Tangible Elements and Environmental Setup</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s05__Core_Gamification_Ontology__concept_to_game_element_mappings_">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s05::Core Gamification Ontology (concept-to-game-element mappings)</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_10_s25__Appendices__Role_sheets__card_catalogs__glossary__references_">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s25::Appendices (Role sheets, card catalogs, glossary, references)</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#NarrativePanelUI_10">
+  <rdf:type rdf:resource="#UIComponent"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Spec_6">
+  <rdf:type rdf:resource="#SpecDocument"/>
+  <hasSection rdf:resource="#Sec_6_s24__Conclusion"/>
+  <hasSection rdf:resource="#Sec_6_s06__Game_Mechanics"/>
+  <hasSection rdf:resource="#Sec_6_s09__Narrative_Framework"/>
+  <hasSection rdf:resource="#Sec_6_s17__Interface_Wireframes"/>
+  <hasSection rdf:resource="#Sec_6_s21__Implementation_Risks"/>
+  <hasSection rdf:resource="#Sec_6_s14__Gamified_User_Stories"/>
+  <hasSection rdf:resource="#Sec_6_s07__Emergent_Game_Dynamics"/>
+  <hasSection rdf:resource="#Sec_6_s08__Rewards_and_Incentives"/>
+  <hasSection rdf:resource="#Sec_6_s13__Detailed_Gameplay_Flow"/>
+  <hasSection rdf:resource="#Sec_6_s01__Introduction_and_Context"/>
+  <hasSection rdf:resource="#Sec_6_s03__Core_Learning_Objectives"/>
+  <hasSection rdf:resource="#Sec_6_s16__Illustrative_Storyboards"/>
+  <hasSection rdf:resource="#Sec_6_s10__Social_Interaction_Design"/>
+  <hasSection rdf:resource="#Sec_6_s15__Key_Interaction_Sequences"/>
+  <hasSection rdf:resource="#Sec_6_s19__Game_Management_Structure"/>
+  <hasSection rdf:resource="#Sec_6_s02__Simulation_Project_Context"/>
+  <hasSection rdf:resource="#Sec_6_s22__Data_Collection_and_Feedback"/>
+  <hasSection rdf:resource="#Sec_6_s18__Assessment_Framework_and_KPIs"/>
+  <hasSection rdf:resource="#Sec_6_s11__Customization_and_Adaptability"/>
+  <hasSection rdf:resource="#Sec_6_s23__Continuous_Improvement_Framework"/>
+  <hasSection rdf:resource="#Sec_6_s20__Execution_Log_and_Leaderboard_Design"/>
+  <hasSection rdf:resource="#Sec_6_s04__Participant_Profiles_and_Role_Mapping"/>
+  <hasSection rdf:resource="#Sec_6_s12__Tangible_Elements_and_Environmental_Setup"/>
+  <hasSection rdf:resource="#Sec_6_s05__Core_Gamification_Ontology__concept_to_game_element_mappings_"/>
+  <hasSection rdf:resource="#Sec_6_s25__Appendices__Role_sheets__card_catalogs__glossary__references_"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Auto Complete Test Spec</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s24__Conclusion">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s24::Conclusion</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This specification concludes by affirming that the cybersecurity training game integrates sound pedagogical design with engaging mechanics to cultivate durable secure behaviors. The approach emphasizes measurable learning impact, ethical deployment, and iterative improvement, ensuring the experience remains accurate, motivating, and adaptable to organizational needs while avoiding unnecessary complexity or extraneous features.
+
+- Reinforces alignment between defined learning objectives and game scenarios, ensuring coverage of core cybersecurity competencies and behavior change goals.
+- Prioritizes measurable impact through clearly scoped metrics (e.g., proficiency gains, reduced error rates, retention), enabling pre/post and longitudinal evaluation.
+- Ensures fair, transparent progression and recognition systems (including any leaderboard elements) that promote mastery over mere competition and respect player autonomy.
+- Commits to timely, actionable feedback and adaptive challenge to sustain engagement while supporting diverse learner profiles and prior knowledge levels.
+- Upholds privacy, data minimization, and ethical analytics, restricting telemetry to learning-relevant signals and safeguarding sensitive information.
+- Supports maintainability and continuous improvement via versioned content, calibration of difficulty and scoring, and evidence-based iteration from aggregated insights.
+
+Acceptance criteria:
+1) The conclusion provides a concise synthesis that links learning objectives, assessment/metrics, progression/recognition, and feedback without introducing new interfaces or features. 
+2) References to narrative, KPIs/metrics, leaderboard, and objectives remain generic and consistent, avoiding specifics not defined elsewhere in the specification. 
+3) The text articulates commitments to measurable learning impact, ethical data practices, and iterative improvement applicable to a cybersecurity training game.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s06__Game_Mechanics">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s06::Game Mechanics</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section specifies the core mechanics that operationalize cybersecurity learning objectives into interactive, measurable play. Mechanics are designed to elicit correct defensive behaviors under constraints, provide immediate formative feedback, and generate reliable performance signals suitable for objective tracking and competitive comparison without distracting from instructional fidelity.
+
+- Scenario-based incidents: Players engage with multi-step cybersecurity scenarios (e.g., phishing triage, endpoint containment, log analysis) that decompose into explicit objectives with success/failure conditions and branching outcomes based on chosen actions.
+- Scoring and penalties: Points are awarded via a weighted function of action accuracy, time-to-resolution, adherence to best practices, and minimized impact; unsafe or noncompliant actions incur proportional penalties and can escalate simulated risk to terminate a scenario early.
+- Resource and evidence economy: Tool usage (e.g., scans, queries) and requests for hints are limited or cooldown-gated; collecting corroborating evidence before taking irreversible actions increases potential score, while consuming hints reduces the maximum achievable score for that objective.
+- Adaptive difficulty: Subsequent incidents dynamically adjust complexity (noise level, volume of artifacts, ambiguity of indicators) based on recent performance, preserving validity of measurement while maintaining appropriate challenge.
+- Streaks and mastery: Consecutive correct actions within scenarios generate a bounded multiplier; streaks reset on critical errors; completing all objectives with high accuracy flags the incident as “mastered” and unlocks more advanced variants of the same competency.
+- Risk and compliance thresholds: A continuously evaluated risk posture reflects cumulative consequences of actions; exceeding a defined threshold ends the incident as a simulated breach; a compliance metric rewards policy-aligned choices and reduces points for procedural deviations even if technically effective.
+- Leaderboard integration: Aggregated scenario scores, median time-to-resolution, and precision metrics (e.g., low false-positive rate while meeting objectives) feed an opt-in leaderboard that supports fair comparison across equivalent difficulty bands.
+- Debrief and feedback loop: At incident end, players receive a debrief highlighting objective completion, errors mapped to best practices, benchmark comparisons, and targeted recommendations to improve key competencies.
+
+Acceptance criteria:
+1) The scoring engine deterministically combines accuracy, time, resource use, and compliance into a single scenario score; using a hint reduces the maximum attainable score for the affected objective, and any critical unsafe action immediately applies a predefined penalty and may trigger scenario failure if the risk threshold is exceeded.
+2) Adaptive difficulty selects subsequent incident parameters from a bounded configuration tied to prior performance, and mastery of an incident (all objectives completed above the defined performance threshold without critical errors) is required before advanced variants become available.
+3) The leaderboard displays only normalized metrics derived from completed incidents (total score, time-to-resolution, precision) for players in the same difficulty band, updates upon incident completion, and excludes personally identifiable information by default unless explicitly enabled by configuration.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s09__Narrative_Framework">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s09::Narrative Framework</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This framework situates learners as analysts within a simulated enterprise Security Operations Center (SOC) facing an evolving campaign by an adaptive adversary. Narrative progression unfolds as episodic incidents that escalate in scope and complexity, with persistent world state reflecting prior decisions. Each episode operationalizes concrete cybersecurity competencies, linking in-story choices to measurable performance indicators and peer comparison while maintaining ethical, realistic constraints.
+
+- Premise and roles: Learners begin as Tier-1 analysts and can assume advanced responsibilities (threat hunter, incident responder, incident commander) as competence is demonstrated; non-player stakeholders (IT ops, legal, management) are represented through narrative prompts that surface trade-offs (risk, cost, compliance, continuity).
+- Episode structure: Self-contained but interrelated incidents (e.g., phishing-led intrusion, lateral movement, ransomware staging, data exfiltration) form a season arc; branching paths and consequences persist (asset exposure, adversary footholds, user trust), reinforcing longitudinal decision accountability.
+- Mechanics-to-competency mapping: Story choices are explicitly tied to controls and practices (e.g., email authentication, EDR triage, least privilege, segmentation, backup/restore drills), with success contingent on evidence-based reasoning using artifacts (logs, alerts, tickets, threat intel).
+- Feedback and reflection: In-universe briefings, after-action reports, and stakeholder memos deliver formative feedback, highlighting causal chains between actions and outcomes; reflective prompts require justification of decisions to consolidate conceptual understanding and transfer.
+- KPI alignment: Each incident specifies target metrics such as detection accuracy/precision (alert triage quality), mean time to respond/contain within scenario time, false positive rate, policy/compliance adherence score, secure configuration/remediation completeness, and incident documentation quality.
+- Leaderboard integration: Peer comparison emphasizes risk reduced, containment effectiveness, mission completion without unnecessary impact, and accuracy-weighted timeliness; tie-breakers and anti-gaming rules privilege evidence quality and minimal collateral damage over raw speed.
+- Progression and rewards: Advancing arcs unlock new tool access, responsibilities, and endorsements (e.g., “Phishing Triage Specialist”), with badges reflecting mastery of objectives; persistent reputation affects stakeholder trust and available narrative options in later incidents.
+
+Acceptance criteria:
+- The narrative framework describes a clear SOC-based premise, enumerates at least three player roles/responsibilities, and defines episodic progression with persistent consequences across incidents.
+- For each episode type, there is an explicit mapping to learning objectives and at least five KPIs (including detection accuracy, response/containment time, false positive rate, compliance/policy adherence, and remediation completeness) used to evaluate performance.
+- Leaderboard design specifies the primary ranking metrics (risk reduced, effectiveness, accuracy-weighted timeliness), tie-breakers, and anti-gaming safeguards that prioritize decision quality and minimal collateral impact over speed, with persistence rules across the season arc.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s17__Interface_Wireframes">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s17::Interface Wireframes</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The interface wireframes adopt a SOC-inspired, evidence-first layout that scaffolds episodic decision-making while surfacing KPIs and peer comparison in-context. Each screen emphasizes realistic constraints, stakeholder trade-offs, and persistent consequences across the season arc, ensuring that role progression, narrative feedback, and leaderboard logic are visible without distracting from analytic tasks.
+
+- Episode Briefing and Role Header: A briefing panel presents incident synopsis, current role (e.g., Tier-1, threat hunter, incident responder), and learning objectives; a side strip lists stakeholder memos (IT ops, legal, management) with tagged risks/costs/compliance. Start controls transition to analysis with the role’s available tools clearly indicated.
+
+- Incident Workspace (Triage/Evidence/Decisions): A three-pane layout anchors the core loop. Left: alert/ticket queue with severity and confidence. Center: evidence viewer with tabs for logs, EDR telemetry, email artifacts, and threat intel, including filter/search and artifact provenance. Right: decision log and stakeholder prompts requiring justification text and artifact references. A KPI ribbon atop the workspace displays detection accuracy, response/containment time (scenario clock), false positive rate, compliance adherence score, remediation completeness, and documentation quality.
+
+- Action and Containment Console: Contextual actions (isolate host, revoke token, block domain, escalate) are gated by prerequisite evidence and role permissions. Each action previews estimated risk reduced, potential collateral impact, and policy/compliance implications; confirmations capture rationale to support accuracy-weighted timeliness and anti-gaming safeguards.
+
+- Stakeholder Trade-off Prompt: A focused dialog delivers narrative constraints (business continuity, legal exposure, cost) with selectable options; each selection mandates an evidence-backed justification and shows predicted effects on KPIs and persistent world state (e.g., user trust, adversary footholds).
+
+- After-Action Report and Reflection: Post-incident, a timeline visualizes alerts, actions, containment, and outcomes; KPI deltas are enumerated with causal explanations. Reflection prompts solicit rationale and lessons learned, linking choices to controls/practices (email authentication, least privilege, segmentation, backup/restore).
+
+- Season Arc and Persistence View: A linear episode strip indicates completed incidents and persistent consequences (asset exposure, adversary footholds) using status markers; hovering reveals brief summaries of carryover conditions and unlocked responsibilities, badges, and endorsements.
+
+- Leaderboard and Peer Comparison Drawer: A slide-out panel ranks learners by risk reduced, containment effectiveness, and accuracy-weighted timeliness; tie-breakers prioritize evidence quality and minimal collateral damage. Tooltips disclose anti-gaming rules (e.g., penalizing unnecessary actions and unjustified speed), and standings persist across the season.
+
+Acceptance criteria:
+1) Wireframes enumerate and describe the Briefing, Incident Workspace (triage/evidence/decisions), Action Console, Stakeholder Prompt, After-Action Report, Season Arc view, and Leaderboard drawer, with element-level mapping to SOC roles, artifacts, and stakeholder interactions.
+2) KPI visibility is integrated in-context (workspace ribbon and AAR), covering detection accuracy, response/containment time, false positive rate, compliance adherence, remediation completeness, and documentation quality; leaderboard ranks by risk reduced, containment effectiveness, and accuracy-weighted timeliness with explicit tie-breakers and anti-gaming safeguards.
+3) Persistence is visually represented in the Season Arc view and reflected in available actions/roles; decision justifications require artifact references, reinforcing evidence quality and minimizing collateral impact in alignment with the narrative’s ethical, realistic constraints.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s21__Implementation_Risks">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s21::Implementation Risks</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Implementing an episodic, stateful SOC simulation with an adaptive adversary and KPI/leaderboard evaluation entails intertwined technical, psychometric, and ethical risks that can undermine validity, fairness, and operational security if not addressed through rigorous data, telemetry, and state-management practices.
+
+- Data realism vs. operational security: Using authentic artifacts risks leakage of sensitive methods/PII, while over-synthetic logs reduce ecological validity and transfer; strict redaction pipelines and generative data evaluation (distributional similarity, label quality) are required to preserve realism without exposure.
+- Adaptive adversary calibration: Dynamic opponent behaviors and persistent world state can yield non-comparable difficulty across learners and episodes, distorting detection accuracy and accuracy-weighted timeliness; scenario versioning, seed control, and difficulty bands must constrain variance to sustain fair peer comparison and leaderboard integrity.
+- KPI validity and anti-gaming: Emphasizing MTTR may incentivize premature actions or collateral impact despite safeguards; instrumentation must weight evidence quality, containment effectiveness, and false positive costs, with tamper-evident logs and anomaly detection to flag metric manipulation.
+- Persistent state integrity: Branching consequences (asset exposure, footholds, reputation) create combinatorial complexity and potential desynchronization; transactional state updates, deterministic roll-forward/replay, and fault-tolerant checkpoints are needed to prevent state corruption and inconsistent stakeholder responses.
+- Tool and control fidelity: Misaligned simulations of EDR, segmentation, backups, and policy controls can teach non-transferable heuristics; content must map unambiguously to the defined competencies, with latency/throughput constraints modeled so that KPIs reflect realistic operational trade-offs.
+- Privacy, compliance, and ethics: Telemetry used to compute KPIs and after-action feedback can inadvertently capture personal data or sensitive organizational patterns; privacy-by-design collection, minimization, and jurisdiction-aware retention policies are necessary, alongside bias audits for stakeholder prompts and evaluation rubrics.
+- Scalability and reproducibility: Resource-intensive adversary logic and analytics can impair response time, altering time-based metrics; performance SLOs, cohort-level load testing, and reproducible scenario snapshots are essential to ensure metric stability across concurrent learners.
+
+Acceptance criteria:
+1) The risk register enumerates at least six specific risks tied to the SOC narrative, KPI instrumentation, leaderboard rules, or competency mapping, each with a stated impact on validity/fairness and an associated verification or mitigation approach.
+2) The implementation plan defines controls for adversary calibration (seed/versioning), telemetry integrity (tamper-evident logging, metric weighting for evidence quality and collateral impact), and state persistence (transactional checkpoints, deterministic replay), without introducing new UI surfaces.
+3) Compliance and ethics measures are specified, including PII minimization and retention policies, bias review of stakeholder prompts/evaluators, and performance SLOs ensuring that time-based KPIs and leaderboard rankings remain comparable under expected load.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s14__Gamified_User_Stories">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s14::Gamified User Stories</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s07__Emergent_Game_Dynamics">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s07::Emergent Game Dynamics</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s08__Rewards_and_Incentives">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s08::Rewards and Incentives</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s13__Detailed_Gameplay_Flow">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s13::Detailed Gameplay Flow</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s01__Introduction_and_Context">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s01::Introduction and Context</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s03__Core_Learning_Objectives">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s03::Core Learning Objectives</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s16__Illustrative_Storyboards">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s16::Illustrative Storyboards</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s10__Social_Interaction_Design">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s10::Social Interaction Design</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s15__Key_Interaction_Sequences">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s15::Key Interaction Sequences</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s19__Game_Management_Structure">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s19::Game Management Structure</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s02__Simulation_Project_Context">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s02::Simulation/Project Context</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s22__Data_Collection_and_Feedback">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s22::Data Collection and Feedback</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s18__Assessment_Framework_and_KPIs">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s18::Assessment Framework and KPIs</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s11__Customization_and_Adaptability">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s11::Customization and Adaptability</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s23__Continuous_Improvement_Framework">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s23::Continuous Improvement Framework</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s20__Execution_Log_and_Leaderboard_Design">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s20::Execution Log and Leaderboard Design</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s04__Participant_Profiles_and_Role_Mapping">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s04::Participant Profiles and Role-Mapping</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s12__Tangible_Elements_and_Environmental_Setup">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s12::Tangible Elements and Environmental Setup</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s05__Core_Gamification_Ontology__concept_to_game_element_mappings_">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s05::Core Gamification Ontology (concept-to-game-element mappings)</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_6_s25__Appendices__Role_sheets__card_catalogs__glossary__references_">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s25::Appendices (Role sheets, card catalogs, glossary, references)</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#NarrativePanelUI_6">
+  <rdf:type rdf:resource="#UIComponent"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

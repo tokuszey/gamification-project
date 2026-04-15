@@ -1,0 +1,30 @@
+﻿SECTIONS_25 = [
+    "Introduction and Context",
+    "Simulation/Project Context",
+    "Core Learning Objectives",
+    "Participant Profiles and Role-Mapping",
+    "Core Gamification Ontology (concept-to-game-element mappings)",
+    "Game Mechanics",
+    "Emergent Game Dynamics",
+    "Rewards and Incentives",
+    "Narrative Framework",
+    "Social Interaction Design",
+    "Customization and Adaptability",
+    "Tangible Elements and Environmental Setup",
+    "Detailed Gameplay Flow",
+    "Gamified User Stories",
+    "Key Interaction Sequences",
+    "Illustrative Storyboards",
+    "Interface Wireframes",
+    "Assessment Framework and KPIs",
+    "Game Management Structure",
+    "Execution Log and Leaderboard Design",
+    "Implementation Risks",
+    "Data Collection and Feedback",
+    "Continuous Improvement Framework",
+    "Conclusion",
+    "Appendices (Role sheets, card catalogs, glossary, references)",
+]
+
+def empty_template() -> dict:
+    return {f"s{idx+1:02d}::{name}": "" for idx, name in enumerate(SECTIONS_25)}

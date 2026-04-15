@@ -1,0 +1,740 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/gamifyont.owl"
+         xmlns="http://example.org/gamifyont.owl#">
+
+<owl:Ontology rdf:about="http://example.org/gamifyont.owl"/>
+
+<owl:ObjectProperty rdf:about="#hasSection">
+  <rdfs:domain rdf:resource="#SpecDocument"/>
+  <rdfs:range rdf:resource="#SpecSection"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#definesElement">
+  <rdfs:domain rdf:resource="#SpecSection"/>
+  <rdfs:range rdf:resource="#GameElement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#realizedAsUI">
+  <rdfs:domain rdf:resource="#GameElement"/>
+  <rdfs:range rdf:resource="#UIComponent"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#appealsTo">
+  <rdfs:domain rdf:resource="#GameElement"/>
+  <rdfs:range rdf:resource="#PlayerType"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a game element to player types it is designed to motivate (demo axioms for SPARQL).</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#pointsValue">
+  <rdfs:domain rdf:resource="#Points"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#SpecDocument">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SpecSection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GameElement">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UIComponent">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Points">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GamificationProject">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Mechanic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Dynamic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Reward">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PlayerType">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#KPI">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Event">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Badge">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Leaderboard">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Level">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Quest">
+  <rdfs:subClassOf rdf:resource="#GameElement"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Hexad_Achiever">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Achiever (HEXAD)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Hexad_Player">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Player / Reward-oriented (HEXAD)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Hexad_Socializer">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Socializer (HEXAD)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Hexad_FreeSpirit">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Free Spirit (HEXAD)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Hexad_Philanthropist">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Philanthropist (HEXAD)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Hexad_Disruptor">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Disruptor (HEXAD)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Bartle_Achiever">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Achiever (Bartle)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Bartle_Explorer">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Explorer (Bartle)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Bartle_Socializer">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Socializer (Bartle)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#Bartle_Killer">
+  <rdfs:subClassOf rdf:resource="#PlayerType"/>
+  <rdfs:label xml:lang="en">Killer (Bartle)</rdfs:label>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Demo_Element_Badge">
+  <rdf:type rdf:resource="#Badge"/>
+  <appealsTo rdf:resource="#Hexad_Achiever"/>
+  <appealsTo rdf:resource="#Bartle_Achiever"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Demo_Element_Leaderboard">
+  <rdf:type rdf:resource="#Leaderboard"/>
+  <appealsTo rdf:resource="#Hexad_Player"/>
+  <appealsTo rdf:resource="#Bartle_Killer"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Demo_Element_Quest">
+  <rdf:type rdf:resource="#Quest"/>
+  <appealsTo rdf:resource="#Hexad_FreeSpirit"/>
+  <appealsTo rdf:resource="#Bartle_Explorer"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Spec_16">
+  <rdf:type rdf:resource="#SpecDocument"/>
+  <hasSection rdf:resource="#Sec_16_s24__Conclusion"/>
+  <hasSection rdf:resource="#Sec_16_s06__Game_Mechanics"/>
+  <hasSection rdf:resource="#Sec_16_s09__Narrative_Framework"/>
+  <hasSection rdf:resource="#Sec_16_s17__Interface_Wireframes"/>
+  <hasSection rdf:resource="#Sec_16_s21__Implementation_Risks"/>
+  <hasSection rdf:resource="#Sec_16_s14__Gamified_User_Stories"/>
+  <hasSection rdf:resource="#Sec_16_s07__Emergent_Game_Dynamics"/>
+  <hasSection rdf:resource="#Sec_16_s08__Rewards_and_Incentives"/>
+  <hasSection rdf:resource="#Sec_16_s13__Detailed_Gameplay_Flow"/>
+  <hasSection rdf:resource="#Sec_16_s01__Introduction_and_Context"/>
+  <hasSection rdf:resource="#Sec_16_s03__Core_Learning_Objectives"/>
+  <hasSection rdf:resource="#Sec_16_s16__Illustrative_Storyboards"/>
+  <hasSection rdf:resource="#Sec_16_s10__Social_Interaction_Design"/>
+  <hasSection rdf:resource="#Sec_16_s15__Key_Interaction_Sequences"/>
+  <hasSection rdf:resource="#Sec_16_s19__Game_Management_Structure"/>
+  <hasSection rdf:resource="#Sec_16_s02__Simulation_Project_Context"/>
+  <hasSection rdf:resource="#Sec_16_s22__Data_Collection_and_Feedback"/>
+  <hasSection rdf:resource="#Sec_16_s18__Assessment_Framework_and_KPIs"/>
+  <hasSection rdf:resource="#Sec_16_s11__Customization_and_Adaptability"/>
+  <hasSection rdf:resource="#Sec_16_s23__Continuous_Improvement_Framework"/>
+  <hasSection rdf:resource="#Sec_16_s20__Execution_Log_and_Leaderboard_Design"/>
+  <hasSection rdf:resource="#Sec_16_s04__Participant_Profiles_and_Role_Mapping"/>
+  <hasSection rdf:resource="#Sec_16_s12__Tangible_Elements_and_Environmental_Setup"/>
+  <hasSection rdf:resource="#Sec_16_s05__Core_Gamification_Ontology__concept_to_game_element_mappings_"/>
+  <hasSection rdf:resource="#Sec_16_s25__Appendices__Role_sheets__card_catalogs__glossary__references_"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">New GameForge Specification</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s24__Conclusion">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s24::Conclusion</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This specification synthesizes gamification for corporate and academic learning by aligning mechanics with curricular integrity and instructor oversight. Core elements prioritize competence (XP and levels mapped to explicit learning objectives with certificates at milestones), relatedness (peer study groups and discussion quests), autonomy (optional paths and electives), and calibrated challenge (formative quizzes with immediate feedback), while preserving cohort-level visibility for instructors and avoiding extraneous competitive signals.
+
+- Map XP and levels directly to assessed learning objectives within curriculum units; award certificates at milestone completions to acknowledge mastery without replacing formal summative assessment.
+- Facilitate opt-in peer study groups and discussion quests that reward constructive participation and knowledge sharing, emphasizing cooperative outcomes over comparative rankings.
+- Offer optional learning paths and electives to support learner autonomy, ensuring credits from electives contribute meaningfully toward progression without creating dead ends.
+- Implement formative quizzes with immediate, actionable feedback loops to tune challenge and provide clear remediation guidance tied to objectives.
+- Provide instructors with cohort progress visibility to support timely interventions and equitable pacing, while maintaining learner privacy and avoiding public comparative displays.
+- Calibrate progression pacing and XP yields to favor mastery behaviors (practice, reflection, peer support) over grind, with safeguards against extrinsic incentive overshadowing learning quality.
+- Ensure gating and prerequisite logic remain consistent with curriculum design, so gamified progression cannot bypass required assessments or competencies.
+
+Acceptance criteria:
+1) Conclusion explicitly mentions XP/levels mapped to learning objectives, certificates at milestones, peer study groups/discussion quests, optional paths/electives, formative quizzes with immediate feedback, and cohort progress visibility for instructors.
+2) No learner-facing leaderboard or specific KPI set is introduced; recognition is framed non-comparatively and privacy-preserving.
+3) The section avoids inventing new UI surfaces, referencing only instructor visibility of cohort progress and mechanisms implied by the domain patterns.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s06__Game_Mechanics">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s06::Game Mechanics</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section formalizes the core mechanics that operationalize learning progress, social engagement, and autonomy in a curriculum-driven context. Mechanics are aligned to learning objectives and assessments, with feedback loops that encourage iterative mastery and cohort awareness while preserving instructor oversight.
+
+- XP and Levels aligned to objectives: Award XP for completing units, formative quizzes, and summative assessments, with XP weights derived from objective difficulty and assessment validity; cumulative XP maps to levels that represent mastery tiers and trigger certificate issuance at predefined thresholds.
+- Constructive-alignment weighting: Each learning objective carries a rubric-based weight; XP from activities linked to that objective inherits the weight, ensuring progression reflects demonstrated competence rather than time-on-task.
+- Mastery gates with immediate feedback: Formative quizzes provide item-level feedback instantly, grant partial mastery credit, and support structured retries (cooldowns and spaced attempts) to convert feedback into learning gains before unlocking subsequent content.
+- Optional paths and electives: Reaching defined levels or objective mastery unlocks elective modules and alternative challenges, allowing self-directed exploration without impeding required curriculum progression.
+- Study-group and discussion quests: Team-based quests bind to specific units (e.g., co-authored summaries, peer explanations, evidence-based forum threads) with clear contribution criteria and peer endorsement mechanics to validate authentic participation.
+- Cohort progress aggregation: Aggregate XP and mastery across the cohort to compute collective milestones (e.g., unit mastery rate), enabling shared goals and signaling when coordinated review or enrichment is pedagogically indicated.
+- Streaks and pacing safeguards: Lightweight engagement streaks (daily/weekly windows, grace periods) encourage regular study while avoiding punitive penalties for reasonable breaks, supporting sustainable effort over time.
+- Instructor visibility and interventions: Mechanics emit interpretable signals (e.g., objective-level mastery gaps, stalled streaks, unbalanced group contributions) to enable timely instructor interventions such as assigning micro-quests or acknowledging exemplary contributions.
+
+Acceptance criteria:
+1) The system awards XP per activity based on objective-linked weights, increments levels at defined thresholds, and automatically issues certificates when level milestones are reached. 
+2) Formative quizzes return immediate item-level feedback and permit controlled retries; mastery state updates gate access to dependent units according to configured prerequisites. 
+3) Group quests require verified multi-learner contributions and peer endorsements; cohort-level mastery/XP aggregates are computed and exposed alongside per-learner progress for instructor visibility.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s09__Narrative_Framework">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s09::Narrative Framework</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This narrative frames learning as a scholarly expedition in which cohorts advance through curriculum units as research “levels,” earning XP directly mapped to measurable learning objectives; instructors act as advisors who guide progress and validate mastery. The design applies the MDA lens: mechanics (XP, levels, quizzes, certificates, study groups) produce dynamics (goal setting, peer collaboration, elective exploration) that yield a challenge-centric aesthetic with timely feedback and visible cohort momentum.
+
+- Core metaphor and roles: Learners are researchers progressing through units (levels); cohorts function as research labs; instructors serve as advisors who verify milestones and surface mastery gaps.
+- Progression model: XP is awarded per objective-aligned tasks (formative quizzes, applied activities, assessments), with level thresholds tied to explicit mastery criteria rather than time-on-platform.
+- Milestones and recognition: Unit and program waypoints unlock certificates; badges signal mastery of objective clusters and sustained engagement streaks without inflating grades.
+- Social layer: Peer study groups and discussion quests provide cooperative tasks that award shared XP, foster explanation-as-learning, and contribute to a cohort progress metric.
+- Choice architecture: Optional learning paths and electives are modeled as specializations/side-quests, allowing autonomy while preserving required core objectives.
+- Feedback loops (MDA-aligned): Formative quizzes return immediate, explanatory feedback and permit retries with calibrated XP diminishing returns to encourage reflection over grinding.
+- Leaderboard framing: Leaderboards emphasize mastery tiers and consistency over raw speed; views can be cohort-scoped, anonymized, or opt-in to protect motivation and inclusivity.
+- Instructor visibility: Advisors see aggregated cohort progress and objective-level mastery signals to time interventions, recommend electives, and validate certificate issuance.
+
+Acceptance criteria:
+1) Each curriculum unit has documented learning objectives with 1:1 XP mappings and level thresholds; certificates trigger only when the defined mastery criteria for that unit are met.
+2) Every unit offers at least one peer study group activity and one discussion quest that grant XP, contribute to a cohort progress metric, and do not penalize individual standings.
+3) Formative quizzes provide immediate explanatory feedback and retry options with diminishing XP; leaderboards display mastery tiers or consistency streaks and support anonymized or opt-in participation; instructors can review aggregated cohort progress and objective-level mastery status.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s17__Interface_Wireframes">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s17::Interface Wireframes</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This wireframe set visualizes the scholarly expedition metaphor across learner, cohort, and instructor touchpoints, making XP-to-objective mappings, mastery thresholds, and feedback loops concretely navigable while preserving autonomy through electives and socially supported progress via study groups and discussion quests.
+
+- Learner Dashboard (home): Current unit (level) header with objective-aligned XP bar toward the unit’s mastery threshold; visible mastery tier and consistency streak; “Next actions” queue mixing formative quizzes, applied tasks, one study group activity, and one discussion quest; elective side-quests panel; certificate card locked/unlocked based on mastery criteria; cohort momentum snippet.
+- Unit Detail and Objectives Map: Objective list with 1:1 XP values, status chips (Not started/In progress/Mastered), cumulative XP vs. level threshold, and explicit “Criteria to certify” checklist; activity links grouped by mechanic (quiz, applied activity, study group, discussion); retry guidance where applicable; badges for objective clusters.
+- Formative Quiz Flow: Question area with immediate explanatory feedback pane; attempt tracker showing diminishing XP schedule; retry and review controls; “Why” rationale and links back to relevant objectives; post-quiz summary with XP earned and suggested next step.
+- Study Group and Discussion Quest Panel: Join/leave controls (opt-in), group roster, shared XP progress bar contributing to cohort metric, individual contribution indicators without rank penalties; task brief with acceptance criteria and submission/comment thread; reflection prompts to reinforce explanation-as-learning.
+- Cohort Progress View (learner-facing): Cohort mastery thermometer by unit, proportion of objectives mastered, recent momentum; visibility note clarifying cohort scope; callouts to under-addressed objectives to nudge peer collaboration.
+- Leaderboard View: Toggle between mastery tiers and consistency streaks; cohort-scoped by default with anonymized handles and opt-in identity reveal; filters for unit, objective cluster, and timeframe; no raw speed ranks; contextual tooltip framing purpose as mastery visibility.
+- Instructor (Advisor) Dashboard: Aggregated cohort progress by unit and objective (heatmap), at-risk indicators, study group participation signals, certificate readiness queue gated by mastery criteria; drill-down to learner profiles; elective recommendation prompts keyed to uncovered objectives.
+
+Acceptance criteria:
+1) Learner Dashboard and Unit Detail wireframes display objective-level XP mappings, cumulative XP against unit level thresholds, and an explicit certificate criteria checklist that gates certificate unlocks on defined mastery.
+2) Study Group and Discussion Quest wireframes show at least one activity per unit, award shared XP that feeds a cohort progress metric, surface individual contributions without penalizing standings, and are opt-in.
+3) Formative Quiz wireframe provides immediate explanatory feedback with retry controls and diminishing XP; Leaderboard wireframe emphasizes mastery tiers or consistency streaks with anonymized/opt-in identity; Instructor Dashboard wireframe exposes aggregated cohort progress and objective-level mastery with certificate validation controls.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s21__Implementation_Risks">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s21::Implementation Risks</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section identifies risks inherent in translating the scholarly-expedition narrative into operational mechanics (XP, levels, quizzes, certificates, study groups) while preserving pedagogical validity, learner motivation, privacy, and instructor decision quality. The focus is on alignment of XP to learning objectives, integrity of assessment/feedback loops, social dynamics in cohort activities, and safe leaderboard framing within corporate/academic compliance constraints.
+
+- Objective–XP misalignment and calibration drift: If XP awards are not tightly mapped to documented objectives across units and electives, levels/certificates may signal progress without mastery. Mitigate via rubric-based mappings, periodic item analyses, and cross-unit standard setting to ensure comparable XP density per objective.
+- Assessment integrity under retries: Immediate feedback and diminishing returns can invite answer sharing or superficial retries. Use item banks, randomized variants, and attempt-analytics to detect anomalous retry patterns; gate feedback granularity when academic honesty policies require.
+- Leaderboard and motivation risks: Competitive displays may demotivate lower performers or reveal identities. Default to cohort-scoped, anonymized or opt-in leaderboards emphasizing mastery tiers/consistency; prevent cross-cohort views and ensure no PII leakage under FERPA/GDPR.
+- Social XP exploitation: Shared XP in study groups/discussion quests may enable free-riding or collusion. Apply contribution checks (e.g., lightweight peer attestations), cap the proportion of shared XP, and align group tasks to observable artifacts evaluated against objective-level rubrics.
+- Instructor signal noise and workload: Poorly calibrated mastery indicators can trigger false alerts or oversight burdens. Surface aggregated, objective-level signals with confidence bounds and clear thresholds; provide audit trails for certificate validation to support defensible decisions.
+- Cohort progress pressure: A visible cohort metric may create undue pressure on varied paces or accessibility contexts. Ensure it never penalizes individual standings; communicate it as descriptive momentum, and support asynchronous or catch-up pathways.
+- Over-gamification and grade confusion: XP chasing can overshadow deep learning or be misconstrued as grades. Separate XP from summative grading, tune diminishing returns and daily caps, and prioritize explanatory feedback quality over point accrual.
+- Data quality and issuance errors: Sync or event-ordering failures can misfire certificate triggers or misstate levels. Establish a single source of truth, idempotent issuance logic, and reconciliations with auditable logs.
+
+Acceptance criteria:
+1) Alignment and calibration: For every unit (including electives), a documented XP-to-objective map and level thresholds are peer-reviewed by at least two instructors against mastery rubrics; preflight QA evidences consistent XP density across comparable objectives, and certificates can only be issued when all defined mastery criteria for that unit are verified in the audit trail.
+2) Privacy and leaderboard safety: Leaderboards are cohort-scoped and anonymized or opt-in by default; no personally identifiable information is displayed beyond an explicit display name; a completed privacy impact assessment (FERPA/GDPR) and role-based access tests confirm that only assigned instructors see aggregated cohort/objective mastery signals and no cross-cohort data is exposed.
+3) Integrity and social dynamics: Formative quizzes employ randomized item banks with diminishing-XP retry logic; monitoring flags anomalous retry/XP gain patterns for review; study group/discussion quest XP is capped at a documented percentage of total XP and incorporates a minimal contribution-verification mechanism, with termly reviews showing no material free-riding or collusion indicators.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s14__Gamified_User_Stories">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s14::Gamified User Stories</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section articulates user stories that operationalize the scholarly expedition metaphor through objective-aligned XP, mastery-gated levels and certificates, cooperative study dynamics, and autonomy-supportive electives, with instructor oversight ensuring validity. The framing is MDA-consistent: mechanics (quizzes, XP, groups, leaderboards) are specified to induce goal-setting, collaboration, and reflective retry behaviors that yield a challenge-centric learning aesthetic.
+
+- As a learner (researcher), I want to see objective-level XP allocations and level thresholds per unit, so that I can set goals and monitor my proximity to mastery.
+- As a learner, I want formative quizzes to return immediate explanatory feedback and allow retries with diminishing XP, so that I can correct misconceptions without incentivizing grinding.
+- As a learner (Achiever), I want certificates to unlock only when unit/program mastery criteria are met and validated by an instructor (advisor), so that recognition reflects demonstrated competence.
+- As a learner (Socializer), I want to join peer study groups and complete discussion quests that award shared XP and contribute to a cohort progress metric without penalizing individual standings, so that collaboration is intrinsically and instrumentally valuable.
+- As a learner (Free Spirit), I want to choose elective side-quests/specializations that grant XP and badges without substituting for core objectives, so that I can personalize my pathway while meeting required outcomes.
+- As a participant in cohort culture, I want leaderboards to emphasize mastery tiers and consistency streaks, be cohort-scoped, and support opt-in or anonymized participation, so that motivation is preserved for diverse learners.
+- As an instructor (advisor), I want to review aggregated cohort progress and objective-level mastery signals, so that I can time interventions, recommend electives, and validate certificate issuance.
+
+Acceptance criteria:
+1) For every unit, learning objectives are documented with 1:1 XP mappings; level thresholds and certificate issuance are contingent on meeting defined mastery criteria and require instructor validation.
+2) Each unit provides at least one peer study group activity and one discussion quest that award shared XP, update a cohort progress metric, and do not negatively affect individual standings; electives are optional and do not block core progression.
+3) Formative quizzes deliver immediate explanatory feedback and allow retries with diminishing XP; leaderboards, when enabled, display mastery tiers or consistency streaks and support cohort scoping plus anonymized/opt-in participation; instructors can access aggregated cohort progress and objective-level mastery status to inform interventions and certificate validation.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s07__Emergent_Game_Dynamics">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s07::Emergent Game Dynamics</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Emergent dynamics arise as learners internalize objective-aligned XP and levels, negotiate study-group collaborations, and explore electives under instructor advisement; these mechanics collectively produce self-regulated pacing, cooperative knowledge-building, specialization identities, and healthy, low-pressure competition, converging on a challenge-centric aesthetic with timely feedback and visible cohort momentum.
+
+- Mastery-driven pacing: Objective-level XP and level thresholds prompt micro-goal formation, with immediate quiz feedback and diminishing-return retries steering effort from volume to reflection and targeted remediation.
+- Collaborative knowledge construction: Study groups and discussion quests convert explanation and peer support into shared XP, normalizing help-seeking and fostering distributed expertise without disadvantaging individual standings.
+- Cohort momentum and social accountability: A cohort progress metric, fed by cooperative tasks, makes collective advancement legible, encouraging synchronized effort bursts around unit milestones.
+- Autonomy through electives: Optional learning paths function as specialization side-quests, cultivating distinct competence profiles while leaving certificate eligibility contingent on core objective mastery.
+- Healthy competition framing: Leaderboards emphasizing mastery tiers and consistency streaks (not raw speed) create a competence-oriented comparison that is anonymized or opt-in to protect motivation and inclusivity.
+- Advisor-mediated just-in-time support: Aggregated cohort and objective-level mastery signals enable instructors to time nudges, form support clusters, and validate milestone readiness, closing feedback loops at both individual and cohort levels.
+- Anti-grind safeguards: Diminishing XP on retries and streak/badge emphasis on consistency deter brute-force behaviors, channeling effort toward spaced practice and concept consolidation.
+
+Acceptance criteria:
+1) Leaderboards default to mastery tiers and/or consistency streaks, support anonymized or opt-in views, and do not display raw cumulative XP or time-to-complete as the primary comparison dimension.
+2) The cohort progress metric increases only via shared XP from peer study groups and discussion quests; participation in these cooperative activities cannot reduce an individual’s leaderboard position relative to their solo progress.
+3) Formative quiz retries deliver immediate explanatory feedback and award diminishing XP per subsequent attempt; the system logs retry history at the objective level to detect potential XP inflation and surface repeated misconceptions for instructor review.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s08__Rewards_and_Incentives">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s08::Rewards and Incentives</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rewards and incentives foreground mastery, transparency, and equity: extrinsic signals (XP, levels, badges, certificates, shared cohort progress) are explicitly mapped to learning objectives to scaffold intrinsic motivation and a challenge-oriented aesthetic, with immediate feedback and advisor validation ensuring recognition reflects authentic learning rather than time-on-platform.
+
+- Objective-aligned XP and levels: Award XP per objective-tagged activities (formative quizzes, applied tasks, assessments) with published weights, first-try mastery bonuses, calibrated diminishing returns on retries, and per-unit XP caps; level thresholds are tied to explicit mastery criteria and are visible at the objective and unit level.
+- Certificates as mastery credentials: Unit/program certificates unlock only when all requisite objectives meet defined mastery thresholds and an instructor validation event is recorded; issuance is time-agnostic, audit-trailed, and does not alter assessment grades.
+- Badge ecosystem for recognition (not grading): Badges acknowledge objective-cluster mastery, sustained consistency streaks, and positive social contributions (e.g., facilitation, high-quality explanations); badges are additive signals in the learner record and cohort summaries and do not affect grades or certificate eligibility.
+- Social and cohort incentives: Peer study groups and discussion quests grant shared XP to all qualifying contributors and increment a cohort progress metric; shared rewards are non-punitive, include safeguards against free-riding (e.g., contribution checks), and recognize facilitation roles without advantaging raw speed.
+- Elective and specialization incentives: Optional paths and side-quests confer limited bonus XP within caps and specialization badges; they cannot substitute for required core objectives, and repeated runs yield no additional bonus once mastery is recorded.
+- Feedback-linked micro-rewards: Immediate explanatory feedback enables retries with diminishing XP; reflective actions (reviewing explanations, correcting misconceptions) may grant a small, one-time micro-XP per objective to reinforce learning over grinding.
+- Integrity and equity controls: Anti-farming protections (cooldowns, uniqueness checks, item pools) and transparent XP audit logs uphold fairness; public recognition aligns with mastery tiers and consistency rather than volume, with anonymized or opt-in displays to support inclusivity.
+
+Acceptance criteria:
+1) Each unit publishes an objective-level XP schedule (including base XP, any first-try bonus, retry diminishing factor, and per-unit XP cap) and level thresholds tied solely to documented mastery criteria; these rules are visible to learners prior to engagement.
+2) Certificate issuance requires that all unit objectives meet defined mastery thresholds and an instructor validation is logged; a documented badge taxonomy exists for objective clusters, consistency streaks, and social contributions, and badges have zero impact on assessment grades.
+3) Every unit includes at least one peer study group activity and one discussion quest that award shared XP and are factored into the cohort progress metric; shared rewards cannot reduce any learner’s standing, and the system enforces contribution verification and cooldowns with an instructor-accessible audit trail.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s13__Detailed_Gameplay_Flow">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s13::Detailed Gameplay Flow</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This flow operationalizes the scholarly expedition narrative by sequencing learner actions and system responses across curriculum units: learners plan against objective-aligned XP mappings, engage with formative quizzes and cooperative activities, and progress through mastery tiers validated by advisors. Mechanics (XP, levels, quizzes, certificates, study groups) are intentionally arranged to elicit dynamics of goal setting, collaboration, and elective exploration, producing a challenge-centric aesthetic reinforced by immediate feedback and visible cohort momentum.
+
+- Unit initiation: The learner reviews the unit’s documented learning objectives with explicit 1:1 XP mappings and level thresholds; required core tasks and available electives/specializations are presented to support informed path selection.
+- Planning and social setup: The learner joins or forms a peer study group and commits to at least one discussion quest; these cooperative tasks advertise shared XP rules and their contribution to the cohort progress metric without affecting individual rankings negatively.
+- Objective-aligned activity: The learner completes formative quizzes and applied tasks; each submission yields immediate explanatory feedback and awards XP per objective mastered, with calibrated diminishing returns on retries to privilege reflection over repetition.
+- Mastery tracking and dynamics: Personal mastery status updates at the objective level; shared XP from group activities increments the cohort progress metric; optional electives can be undertaken at any time to deepen or broaden mastery without blocking core progression.
+- Progression gates and validation: Upon reaching the unit’s level threshold (XP plus defined mastery criteria), the learner becomes eligible for advisor review; instructors verify objective-level evidence, surface gaps, and may recommend targeted electives or re-engagement with specific quizzes.
+- Recognition and unlocking: When advisors validate mastery, the system issues the corresponding certificate; badges for objective clusters and consistency streaks are granted without altering grades, and relevant side-quests/specializations unlock.
+- Visibility and motivation: Leaderboards emphasize mastery tiers and consistency streaks rather than raw speed, and support cohort-scoped, anonymized, or opt-in views; instructors access aggregated cohort progress and objective-level mastery signals to time interventions and recommendations.
+
+Acceptance criteria:
+1) Each unit defines learning objectives with 1:1 XP mappings and explicit level thresholds; certificates are issued only after the unit’s mastery criteria are met and advisor validation is recorded.
+2) Every unit includes at least one peer study group activity and one discussion quest that award XP, increment a cohort progress metric, and do not penalize individual standings or leaderboards.
+3) Formative quizzes deliver immediate explanatory feedback and allow retries with diminishing XP; leaderboards present mastery tiers and/or consistency streaks with anonymized or opt-in participation; instructors can review aggregated cohort progress and objective-level mastery status.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s01__Introduction_and_Context">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s01::Introduction and Context</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This design frames corporate/academic learning as a scholarly expedition in which cohorts progress through curriculum units as research “levels.” XP is mapped 1:1 to documented learning objectives, with mastery—not time—governing advancement; instructors act as advisors who verify milestones, surface gaps, and steward certificates. Using an MDA lens, mechanics (XP, levels, quizzes, certificates, study groups) are arranged to elicit dynamics (goal setting, collaboration, elective exploration) that produce a challenge-centric aesthetic with timely feedback and visible cohort momentum.
+
+- Domain scope and roles: learners operate as researchers; cohorts function as research labs with shared momentum; instructors serve as advisors who guide progress and validate mastery.
+- Progression model: XP accrues from objective-aligned tasks (formative quizzes, applied activities, assessments); level thresholds are tied to explicit mastery criteria rather than time-on-platform.
+- Milestones and recognition: unit and program waypoints unlock certificates; badges acknowledge objective-cluster mastery and consistent engagement without inflating grades.
+- Social layer: peer study groups and discussion quests grant shared XP, support explanation-as-learning, and contribute to a cohort progress metric while preserving individual standings.
+- Choice architecture: optional learning paths and electives are framed as specializations/side-quests that maintain autonomy alongside required core objectives.
+- Feedback loops: formative quizzes provide immediate, explanatory feedback and permit retries with calibrated diminishing XP to discourage grinding and reward reflection.
+- Leaderboard framing: emphasis on mastery tiers and consistency streaks over raw speed; participation can be cohort-scoped, anonymized, or opt-in to support inclusivity.
+- Instructor visibility: advisors access aggregated cohort progress and objective-level mastery signals to time interventions, recommend electives, and authorize certificate issuance.
+
+Acceptance criteria:
+1) Each curriculum unit documents learning objectives with 1:1 XP mappings and mastery-based level thresholds; certificates issue only when the defined unit criteria are met.
+2) Every unit includes at least one peer study group activity and one discussion quest that award XP, contribute to a cohort progress metric, and do not negatively affect individual standings.
+3) Formative quizzes return immediate explanatory feedback and allow retries with diminishing XP; leaderboards present mastery tiers or consistency streaks with anonymized/opt-in options; instructors can review aggregated cohort progress and objective-level mastery status.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s03__Core_Learning_Objectives">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s03::Core Learning Objectives</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Core learning objectives are defined as measurable, evidence-based outcomes per curriculum unit, with XP and levels mapped 1:1 to objective attainment rather than time. Progression privileges challenge, immediate formative feedback, and scholarly collaboration, enabling instructors to validate mastery and cohorts to visualize momentum without incentivizing speed over understanding.
+
+- Objective taxonomy: Each unit enumerates specific, observable objectives (knowledge/skill statements with criteria and prerequisites) that form the canonical map for XP, levels, badges, and certificates.
+- XP mapping and weighting: Tasks (formative quizzes, applied activities, assessments) award XP only to the targeted objectives; retries earn diminishing XP to privilege reflection over grinding, while caps prevent overfarming any single objective.
+- Levels and certification: Level thresholds aggregate objective mastery within and across units; certificates unlock solely when defined mastery criteria are met for the relevant objective set, independent of elapsed time.
+- Assessment alignment (MDA): Formative quizzes provide immediate explanatory feedback and optional retries (mechanics) that promote goal-setting and deliberate practice (dynamics), sustaining a challenge-centric learning aesthetic.
+- Social learning linkage: Peer study groups and discussion quests are explicitly mapped to objectives, grant shared XP, and increment a cohort progress metric, fostering explanation-as-learning without penalizing individual standings.
+- Choice architecture: Electives/side-quests introduce optional objective clusters that contribute XP and badges without gating core progression, with instructors able to recommend paths based on observed mastery gaps or interests.
+- Leaderboard framing and visibility: If displayed, leaderboards emphasize mastery tiers and consistency streaks, can be cohort-scoped, anonymized, or opt-in, and avoid ranking by raw speed; instructors can review aggregated cohort and objective-level mastery signals to time interventions and validate certificates.
+- KPIs: Objective mastery rate by unit, time-to-mastery per objective, cohort coverage of core objectives, retry efficiency (improvement per attempt), and participation in study/discussion activities inform continuous improvement.
+
+Acceptance criteria:
+1) Every unit lists measurable learning objectives with explicit 1:1 XP mappings and level thresholds; certificates issue only when the unit’s predefined mastery criteria are satisfied (with instructor validation where required).
+2) Each unit includes at least one peer study group activity and one discussion quest mapped to specific objectives that award shared XP and contribute to a cohort progress metric without reducing any learner’s XP or grades.
+3) Formative quizzes deliver immediate explanatory feedback and allow retries with diminishing XP; leaderboards (when enabled) present mastery tiers or consistency streaks with anonymized or opt-in options; instructors can review aggregated cohort progress and objective-level mastery to guide interventions and confirm certificate eligibility.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s16__Illustrative_Storyboards">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s16::Illustrative Storyboards</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">These storyboards illustrate the MDA-aligned flow of a scholarly expedition: mechanics (objective-mapped XP, levels, formative quizzes, certificates, study groups, electives) drive dynamics (goal setting, peer collaboration, elective exploration) to yield a challenge-centric aesthetic with timely feedback and visible cohort momentum. Scenarios span learner, cohort, and instructor perspectives and respect the domain’s emphasis on objective evidence, formative feedback, and advisor validation.
+
+- Unit kickoff and objective alignment: A learner enters Unit k and reviews its measurable objectives and their 1:1 XP mappings; the system surfaces current mastery status per objective; the learner selects target objectives for the week and sees the level threshold and certificate criteria; an advisor note confirms that certification depends on objective mastery, not time.
+- Formative quiz with immediate feedback and retries: The learner attempts a quiz where each item is tagged to specific objectives; after each response, the system provides explanatory feedback and a targeted reference; the learner retries missed items with diminishing XP for improvements, subject to per-objective caps; the level meter updates only for the relevant objectives, keeping the certificate locked until all required criteria are met.
+- Peer study group cooperative task: Three learners form a study group tied to Unit k; they complete a cooperative explanation task mapped to two objectives, submit a shared artifact, and receive shared XP distributed per objective; the cohort progress metric increments; an advisor verifies alignment and provides guidance without affecting any individual’s grades or penalizing standings.
+- Discussion quest for explanation-as-learning: A learner selects a discussion quest aligned to a challenging objective, posts an evidence-backed explanation, and responds to two peers; rubric-based validation awards objective-specific XP; the contribution increments cohort progress while protecting individual standings; the learner’s consistency streak updates, reinforcing deliberate practice over speed.
+- Elective side-quest selection: Based on observed mastery gaps and interests, an advisor recommends an elective objective cluster; the learner opts into the side-quest, completes an applied activity, earns optional XP and a specialization badge, and returns to core objectives without gating progression.
+- Certificate validation and leaderboard framing: Upon satisfying all mastery criteria for Unit k, the system flags the learner for certificate review; the advisor inspects objective-level evidence and approves issuance; if enabled, the leaderboard displays cohort-scoped mastery tiers and consistency streaks, offered as anonymized or opt-in views, avoiding rank by raw speed.
+- Instructor oversight and timely intervention: The advisor examines aggregated cohort progress and objective-level mastery signals, identifies a commonly under-mastered objective, schedules a targeted study group, and monitors retry efficiency across formative quizzes to assess the intervention’s impact.
+
+Acceptance criteria:
+1) Each storyboard depicts XP awarded 1:1 to tagged objectives with level thresholds and certificate issuance only upon meeting defined mastery criteria, including advisor validation where required.
+2) At least one storyboard shows a peer study group and one shows a discussion quest that grant shared, objective-mapped XP, increment a cohort progress metric, and do not reduce any learner’s XP or grades.
+3) A storyboard demonstrates formative quizzes with immediate explanatory feedback and retries with diminishing XP; leaderboard usage (when present) emphasizes mastery tiers or consistency with anonymized or opt-in participation; instructor visibility includes aggregated cohort progress and objective-level mastery.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s10__Social_Interaction_Design">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s10::Social Interaction Design</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section specifies how cooperative and discursive interactions operationalize the scholarly expedition narrative: cohorts function as research labs where peer study groups and discussion quests are explicitly mapped to learning objectives, awarding shared XP that contributes to both individual mastery and a visible cohort momentum metric, while instructors act as advisors who observe aggregated signals, time interventions, and validate mastery.
+
+- Peer study groups: Small, time-bounded groups (recommended 3–6 members) collaborate on objective-aligned activities or applied mini-projects; deliverables demonstrate evidence of mastery, earn shared XP mapped 1:1 to targeted objectives, and never decrease individual XP or grades.
+- Discussion quests: Prompted, objective-anchored threads require explanation-as-learning (e.g., rationale, citations, worked examples) and formative exchange; completion criteria are rubric-based, with immediate feedback loops that point back to relevant materials and objectives.
+- Shared XP mechanics and fairness: Social tasks award a defined shared XP pot tied only to the mapped objectives; XP is distributed equitably among participants who meet contribution thresholds; per-objective caps and retry policies prevent overfarming while preserving inclusivity for late joiners.
+- Cohort progress signal: Completion of study/discussion activities increments a cohort-level progress metric (e.g., percent of cohort demonstrating mastery per objective or waypoint), reinforcing lab-wide momentum without privileging speed over understanding.
+- Leaderboard framing and visibility: When enabled, views emphasize mastery tiers and consistency streaks rather than raw totals; displays are cohort-scoped and either anonymized or opt-in to protect motivation and inclusivity; group-level achievements may be summarized without ranking individuals.
+- Instructor advisory role: Advisors monitor aggregated cohort progress and objective-level mastery gaps, validate milestones for certificate issuance, moderate discussions for rigor and civility, and recommend electives or study pairings based on observed needs.
+- Choice architecture in the social layer: Elective study groups and side-quests map to optional objective clusters, grant XP and badges, and never gate core progression; learners can self-select topics while instructors may suggest paths aligned to mastery gaps.
+- Measurement for improvement: Track participation in social activities, objective mastery rate by unit, cohort coverage of core objectives, and retry efficiency; analyze these KPIs to refine prompts, grouping strategies, and feedback timing.
+
+Acceptance criteria:
+1) Each curriculum unit includes at least one peer study group activity and one discussion quest mapped to specific objectives; both award shared XP according to the defined objective mappings and increment a cohort progress metric without reducing any learner’s XP or grades.
+2) If leaderboards are displayed, they present mastery tiers or consistency streaks, are cohort-scoped, and support anonymized or opt-in participation; instructors can review aggregated cohort progress and objective-level mastery to time interventions and validate certificate eligibility.
+3) Social XP allocation rules are implemented and auditable: objective-aligned XP pots with equitable distribution, per-objective caps to prevent overfarming, and records that allow advisors to trace which objectives, activities, and participants contributed to shared XP and cohort progress.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s15__Key_Interaction_Sequences">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s15::Key Interaction Sequences</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section specifies the canonical flows that translate objective-mapped mechanics (XP, levels, quizzes, certificates, study groups) into predictable learner, cohort, and instructor interactions. Each sequence reinforces a challenge-centric aesthetic with immediate feedback, social collaboration, optional exploration, and advisor validation, while privileging mastery over speed and preserving privacy where appropriate.
+
+- Objective-driven formative loop (learner): Select unit → choose a specific learning objective → attempt formative quiz → receive immediate explanatory feedback per item → optionally review hints/resources → retry with diminishing XP awards; XP is posted only to the targeted objective → objective status updates (progress → mastered) and contributes to level thresholds; caps prevent overfarming → system logs time-to-mastery and retry efficiency.
+- Unit mastery to certificate (learner + instructor): Complete all objective clusters required for the unit via tasks/quizzes → system verifies mastery criteria at the objective level and aggregates to unit readiness → advisor reviews objective-level evidence and, if criteria met, validates issuance → certificate unlocks; badges (if defined) post without inflating grades → cohort progress metric reflects the newly validated mastery.
+- Peer study group activity (cohort collaboration): Join or form a study group aligned to specified objectives → complete a cooperative task (e.g., co-created solution walkthrough or peer explanation) → shared XP is granted to the mapped objectives for all qualifying contributors; no one’s XP/grades decrease → reflections or artifacts are logged to support explanation-as-learning → cohort progress metric increments.
+- Discussion quest (social reflection): Opt into a unit-tied discussion prompt linked to defined objectives → contribute an evidence-based post and respond to peers using rubric cues → immediate formative feedback (rubric highlights, exemplars) is shown → shared XP posts to relevant objectives; diminishing returns apply to repeated low-effort posts → cohort progress metric updates.
+- Elective/side-quest selection (autonomy): Review elective recommendations based on observed mastery gaps/interests → select an optional objective cluster → complete aligned quizzes/activities with the same immediate-feedback and diminishing-returns rules → earn XP/badges that do not gate core progression; advisor can endorse electives for fit.
+- Leaderboard and visibility (motivation without pressure): When enabled, view a cohort-scoped board emphasizing mastery tiers and consistency streaks (not raw speed) → learner can opt-in or choose anonymized display → board updates after validated XP/milestones; filters allow viewing by unit/objective tiers to spotlight depth over pace.
+- Advisor review and intervention (instructor): Access aggregated cohort dashboard → inspect objective-level mastery distributions, time-to-mastery, retry efficiency, and participation in study/discussion activities → identify at-risk objectives and learners → recommend electives, schedule group sessions, or request targeted retries → validate certificates when mastery thresholds are satisfied.
+
+Acceptance criteria:
+1) The objective-driven loop awards XP 1:1 to the selected objective, provides immediate explanatory feedback, supports retries with diminishing XP and caps, and updates objective/level states independently of time-on-platform.
+2) Social flows (study group and discussion quest) are mapped to explicit objectives, grant shared XP and increment a cohort progress metric, remain optional, and never reduce any learner’s XP or grades; contributions are attributable for auditability.
+3) Certificates are issued only when all unit mastery criteria are met and advisor validation is recorded; leaderboards (when enabled) display mastery tiers or consistency streaks with anonymized or opt-in participation; instructors can review aggregated cohort and objective-level mastery to time interventions.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s19__Game_Management_Structure">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s19::Game Management Structure</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section specifies the governance, orchestration, and auditability of the scholarly expedition game layer so that XP, levels, certificates, study groups, electives, and formative feedback are coherently managed across curriculum units and cohorts. It ensures 1:1 XP-to-objective integrity, privacy-conscious visibility, and instructor advisory control, aligning mechanics to dynamics that privilege mastery, collaboration, and timely feedback over speed.
+
+- Roles and permissions: Define a clear role model in which instructors (advisors) configure objective mappings, levels, retry policies, study/discussion activities, and certificate validation; learners participate and view permitted signals; administrators govern global policies and term-level defaults. All actions that affect mastery status are logged.
+- Objective/XP governance: Maintain a canonical objective taxonomy per unit with 1:1 XP mappings, level thresholds, and badge criteria. Apply caps and diminishing-returns policies to retries to prevent overfarming. Lock these rules at cohort launch with versioning and auditable change control.
+- Cohort orchestration: Instantiate cohorts (research labs) with unit lineups, objective sets, and elective options. Compute a cohort progress metric from objective-aligned shared XP (study groups/discussion quests) without penalizing individual standings. Support transfer rules that preserve objective-level mastery.
+- Social layer management: Provision peer study groups and discussion quests per unit, each mapped to targeted objectives and calibrated to award shared XP. Define membership limits, contribution thresholds, and anti-gaming checks (e.g., duplicate-response detection) while preserving inclusive participation.
+- Assessment and feedback policy: Configure formative quizzes to return immediate explanatory feedback with retry allowances under diminishing XP. Associate items with explicit objectives; enforce XP caps per objective and cooldowns where needed to encourage reflection.
+- Levels, certificates, and recognition: Enforce level thresholds tied to objective mastery; trigger certificates only when predefined unit/program criteria are met, with optional instructor validation. Award badges for objective clusters and consistency streaks without altering grades; maintain issuance and revocation audit trails.
+- Leaderboard and privacy controls: When enabled, display mastery tiers or consistency streaks scoped to the cohort; provide anonymized or opt-in participation and the ability to disable rankings entirely. Prohibit speed-based rankings; favor mastery visibility and equitable comparison.
+- Monitoring and improvement: Surface KPIs (objective mastery rate by unit, time-to-mastery, cohort coverage, retry efficiency, participation in study/discussion) to instructors for periodic review, enabling targeted interventions and evidence-based adjustments to electives and support.
+
+Acceptance criteria:
+1) Governance and versioning: Before cohort launch, objectives, 1:1 XP mappings, level thresholds, retry-diminishing parameters, and certificate criteria are finalized, versioned, and locked; any post-launch revisions create a new version, are auditable, and do not retroactively reduce earned mastery without an instructor-approved migration.
+2) Social and assessment orchestration: For every unit in a cohort, at least one peer study group activity and one discussion quest are activated and mapped to specific objectives, grant shared XP to the cohort progress metric, and never reduce individual XP; formative quizzes are configured to deliver immediate explanatory feedback with retries under diminishing XP and objective-level XP caps.
+3) Visibility and certification controls: Instructors can review aggregated cohort progress and objective-level mastery; leaderboards (if enabled) present mastery tiers or consistency streaks with cohort scoping and anonymized or opt-in participation; certificates are issued only upon verified mastery according to the defined criteria and are recorded with an audit log.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s02__Simulation_Project_Context">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s02::Simulation/Project Context</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This simulation models a cohort-based scholarly expedition through curriculum units framed as research levels, where learners accrue XP strictly mapped to objective attainment, collaborate via study groups and discussion quests, receive immediate formative feedback, and earn certificates at verified mastery milestones; instructors act as advisors with visibility into aggregated cohort momentum and objective-level signals to guide timely interventions.
+
+- Actors and structures: Learners operate as researchers within cohorts (“labs”); instructors function as advisors who validate milestones, surface mastery gaps, and recommend electives aligned to observed needs.
+- Scope of content: Each curriculum unit enumerates measurable learning objectives that form the canonical map for XP, levels, badges, and certificates; optional electives/side-quests contribute XP and badges without gating core progression.
+- Mechanics and activities: Formative quizzes, applied activities, and assessments award XP only to their targeted objectives; retries are permitted with calibrated diminishing XP to privilege reflection over grinding.
+- Social learning: Peer study groups and discussion quests are cooperative tasks mapped to specific objectives, granting shared XP and incrementing a cohort progress metric without penalizing individual standings.
+- Progression and recognition: Levels are thresholds over objective mastery within/Across units; certificates unlock solely when predefined mastery criteria are met and instructor validation (where required) confirms readiness.
+- Leaderboard framing and inclusion: When enabled, leaderboards emphasize mastery tiers and consistency streaks, can be cohort-scoped, anonymized, or opt-in, and avoid rewarding raw speed.
+- Instructor visibility and data signals: Advisors access aggregated cohort progress and objective-level mastery indicators to time interventions, validate certificates, and recommend electives; the simulation logs attempts, XP allocations, caps to prevent overfarming, and shared XP events for auditability.
+- KPIs for evaluation: Objective mastery rate by unit, time-to-mastery per objective, cohort coverage of core objectives, retry efficiency (improvement per attempt), and participation in study/discussion activities inform iterative design tuning.
+
+Acceptance criteria:
+1) The simulation instantiates at least two curriculum units with documented measurable objectives, explicit 1:1 XP mappings, and level thresholds; unit certificates trigger only upon meeting defined mastery criteria with instructor validation modeled where applicable.
+2) Each unit includes one peer study group activity and one discussion quest mapped to objectives that award shared XP and increment a cohort progress metric without reducing any learner’s XP or grades.
+3) Formative quizzes provide immediate explanatory feedback and allow retries with diminishing XP; an optional leaderboard mode displays mastery tiers or consistency streaks with anonymized or opt-in participation; instructors can review aggregated cohort progress and objective-level mastery to guide interventions and confirm certificate eligibility.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s22__Data_Collection_and_Feedback">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s22::Data Collection and Feedback</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data collection is anchored to the objective taxonomy so that every interaction yields interpretable evidence of learning and supports timely, explanatory feedback. Following the MDA framing, mechanics (event logging, objective-linked XP, retries) enable dynamics (goal setting, peer collaboration, deliberate practice) that culminate in a challenge-centric aesthetic with visible cohort momentum and instructor-verifiable mastery.
+
+- Objective-anchored telemetry: All XP transactions, assessments, badges, and certificates are recorded with objective_id, unit_id, task/source, timestamp, learner_id, and (when applicable) cohort_id/study_group_id; mastery state transitions are versioned against the objective taxonomy.
+- Attempt-level assessment data: Formative quiz attempts capture item-level responses, correctness, time-on-item, attempt_number, awarded_xp, diminishing_factor applied, and the feedback key delivered, enabling analyses of retry efficiency and time-to-mastery per objective.
+- Social learning evidence: Study group completions and discussion quest participation are logged with shared XP allocations mapped to specific objectives and increment a cohort progress metric without decrementing any individual’s XP or grade.
+- Aggregation and KPIs: The system computes objective mastery rate by unit, time-to-mastery per objective, retry efficiency (improvement per attempt), participation in study/discussion activities, cohort coverage of core objectives, and consistency streaks at learner, group, and cohort grains.
+- Feedback loops: On submission, formative quizzes deliver immediate explanatory feedback tied to the targeted objectives and permit retries with calibrated diminishing XP and per-objective caps; post-attempt summaries surface current mastery gaps to guide deliberate practice and advisor recommendations.
+- Leaderboard framing and privacy: When enabled, leaderboards present mastery tiers and consistency streaks (not raw speed), can be cohort-scoped, and support anonymized or opt-in display; consent state and display scope are logged for auditability.
+- Instructor visibility: Advisors can review aggregated cohort progress and objective-level mastery status, including certificate eligibility signals derived from defined mastery criteria, to time interventions and recommend electives aligned to observed gaps.
+
+Acceptance criteria:
+1) All XP awards, quiz attempts, and mastery state transitions are logged with objective_id, unit_id, source_task_id, timestamp, learner_id, attempt_number, awarded_xp, and diminishing_factor; quizzes additionally store item-level correctness and the feedback key delivered.
+2) Formative quizzes return immediate explanatory feedback mapped to the targeted objectives and allow retries with calibrated diminishing XP and per-objective caps; study group and discussion activities award shared XP that increments a cohort progress metric without reducing any learner’s individual XP or grades.
+3) Instructors can review aggregated cohort progress and objective-level mastery status for intervention timing and certificate validation; if leaderboards are enabled, they display mastery tiers or consistency streaks only, support cohort-scoped anonymized or opt-in participation, exclude raw speed metrics, and KPIs (mastery rate, time-to-mastery, retry efficiency, participation) are computable and exportable at learner and cohort levels.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s18__Assessment_Framework_and_KPIs">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s18::Assessment Framework and KPIs</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This assessment framework operationalizes objective-aligned evidence of learning into XP, levels, and certificates, using immediate feedback and calibrated retries to promote deliberate practice. KPIs emphasize mastery progress, cohort momentum, and instructional effectiveness rather than speed, with instructor visibility focused on aggregated, objective-level signals to guide timely interventions and equitable outcomes.
+
+- Objective alignment and XP mapping: Every assessment artifact (formative quizzes, applied activities, validated assessments) is tagged 1:1 to specific learning objectives; XP is awarded only for targeted objectives, with caps and diminishing returns on retries to discourage grinding and privilege reflection.
+- Mastery thresholds and certification: Objective-level mastery criteria (rubrics or cut scores) roll up to unit level thresholds; certificates unlock only when the predefined mastery set is satisfied, with instructor validation recorded in an auditable trail.
+- Feedback loops (MDA): Formative quizzes deliver immediate explanatory feedback; retries are permitted with XP decay; analytics surface where feedback yields improved correctness across attempts (retry efficiency) to refine item design and teaching support.
+- Cohort progress and social learning: Peer study groups and discussion quests grant shared XP mapped to objectives and increment a cohort progress metric (cohort momentum), contributing to collective visibility without penalizing individual standings.
+- Leaderboard framing: When enabled, leaderboards emphasize mastery tiers (e.g., proportion of core objectives mastered) and consistency streaks (sustained engagement with feedback cycles), are cohort-scoped, and support anonymized or opt-in display; no rankings by raw speed or time-on-platform.
+- KPI set and computation cadence: Core KPIs include objective mastery rate by unit, median time-to-mastery per objective, retry efficiency (improvement per attempt), cohort coverage of core objectives, participation in study/discussion activities, elective engagement rate, and XP alignment index (percent of XP awarded with valid objective tags); computed at least daily and trended over cohorts.
+- Quality and equity checks: Item-level diagnostics (difficulty/discrimination) and subgroup gap analyses (where permissible) flag objectives with high time-to-mastery and low retry efficiency; instructors receive objective-level heatmaps and recommended elective side-quests to close observed gaps.
+
+Acceptance criteria:
+1) KPI instrumentation exists per unit and objective, computing at minimum objective mastery rate, time-to-mastery, retry efficiency, cohort coverage, and participation in study/discussion activities; results are aggregated for instructor review and exclude speed/time-only proxies from performance judgments.
+2) All XP-awarding items are tagged to explicit objectives; formative quizzes provide immediate explanatory feedback and allow retries with diminishing XP; certificates are issued only when unit mastery criteria are met, with an auditable validation record.
+3) If leaderboards are enabled, they display mastery tiers and consistency streaks, support cohort scoping and anonymized or opt-in participation, and exclude raw speed rankings; peer study and discussion activities award shared XP and update the cohort progress metric without reducing any learner’s XP or grades.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s11__Customization_and_Adaptability">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s11::Customization and Adaptability</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Customization and Adaptability ensure the gamified learning framework can be tuned to institutional goals and cohort needs without compromising objective alignment, equity, or the MDA-informed feedback loops. Configuration operates at program, unit, and cohort levels, with guardrails, versioning, and instructor oversight to preserve mastery-based progression, scholarly collaboration, and privacy-conscious visibility.
+
+- Objective-aligned configuration: Per-unit templates define 1:1 objective-to-XP mappings, weights, and caps; level thresholds derive from documented mastery criteria (rubrics/cut scores). Changes are versioned and auditable; retroactive effects on issued certificates are prohibited.
+- Feedback and retry policy tuning: Immediate explanatory feedback for formative quizzes is non-optional; retries are enabled with configurable XP decay and attempt caps within policy bounds to deter grinding while sustaining challenge and deliberate practice.
+- Social learning customization: Each unit can define peer study group activities and discussion quests mapped to specific objectives, awarding shared XP and incrementing a cohort progress metric; these activities are optional relative to grades and cannot reduce any learner’s XP.
+- Choice architecture controls: Electives/side-quests are modeled as objective clusters with prerequisites; they contribute XP/badges without gating core progression. Instructors can target recommendations based on objective-level mastery gaps surfaced in aggregated analytics.
+- Leaderboard visibility options: Leaderboards can be disabled; when enabled, they are cohort-scoped, emphasize mastery tiers and consistency streaks, and support anonymized or opt-in participation. Rankings by raw speed or time-on-platform are disallowed.
+- Cohort pacing and accommodations: Schedules/windows for activities can be cohort-specific (e.g., term calendars or training waves) without altering mastery thresholds; individual accommodations adjust scheduling, not XP criteria, to preserve fairness.
+- Analytics thresholds and alerts: KPI dashboards (objective mastery rate, time-to-mastery, retry efficiency, cohort coverage, participation) support instructor-defined alert thresholds to time interventions and propose elective side-quests aligned to observed gaps.
+
+Acceptance criteria:
+1) For every unit, instructors/admins can select an objective-to-XP template and adjust weights within bounded ranges; level thresholds are computed from documented mastery criteria; certificates issue only upon satisfying unit mastery with instructor validation where required; all changes are versioned and auditable, with no retroactive impact on issued certificates.
+2) Formative quizzes always deliver immediate explanatory feedback; retries are enabled with configurable XP decay and attempt caps constrained to policy bounds; each unit includes at least one peer study group activity and one discussion quest mapped to objectives that award shared XP, increment the cohort progress metric, and never reduce any learner’s XP or grades.
+3) If leaderboards are enabled, they are cohort-scoped, display only mastery tiers or consistency streaks, and support anonymized or opt-in participation; instructors can define elective/side-quest objective clusters that cannot gate core progression and can be recommended based on objective-level mastery gaps visible in aggregated instructor analytics.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s23__Continuous_Improvement_Framework">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s23::Continuous Improvement Framework</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This framework institutes a data-informed, iterative cycle that uses objective-aligned evidence (XP, mastery thresholds, cohort momentum) to refine curriculum units, assessments, and social learning practices. Grounded in MDA, it prioritizes timely feedback, equity, and instructor-guided validation while protecting autonomy (electives) and inclusive motivation (mastery- and consistency-centered signals).
+
+- PDCA cadence and scope: For each unit, Plan–Do–Study–Act reviews run on a fixed cadence (at least biweekly in active cohorts), analyzing objective mastery rate, median time-to-mastery, retry efficiency, cohort coverage of core objectives, and participation in study/discussion activities.
+- Evidence-to-action pipeline: Reviews yield constrained interventions aligned to the narrative and KPIs—quiz feedback refinements, item pool adjustments, XP cap/decay tuning within policy, scheduling or redesign of peer study/discussion quests, and targeted elective recommendations based on observed mastery gaps.
+- Assessment calibration: Item-level diagnostics (difficulty, discrimination, miss-patterns) and retry traces guide reweighting or revision of formative quizzes and applied activities; improvements are evaluated by subsequent shifts in retry efficiency and mastery attainment.
+- Social learning optimization: Cohort momentum (shared XP from study groups and discussion quests) informs when to seed cooperative tasks, redistribute participants, or scaffold prompts to enhance explanation-as-learning without penalizing individual standings.
+- Governance and auditability: Objective definitions, XP mappings, level thresholds, and certificate criteria are versioned with effective dates; all advisor validations and policy changes are recorded in an auditable trail and never retroactively diminish earned XP, badges, or certificates.
+- Equity and quality safeguards: Where permissible, subgroup gap analyses and unit-level heatmaps flag objectives with high time-to-mastery or low retry efficiency; advisors receive objective-level recommendations (including electives/side-quests) to close gaps.
+- Leaderboard stewardship: When enabled, leaderboard configurations are periodically reviewed to ensure emphasis on mastery tiers and consistency streaks, cohort scoping, and anonymized or opt-in display, with explicit exclusion of raw speed or time-on-platform signals.
+
+Acceptance criteria:
+1) A documented PDCA cycle exists per unit with a biweekly minimum review that computes objective mastery rate, median time-to-mastery, retry efficiency, cohort coverage, and participation in study/discussion activities; each review logs selected interventions limited to feedback/item revisions, XP cap/decay tuning within policy, elective recommendations, or study/discussion scheduling—no speed-based proxies are introduced.
+2) Weekly assessment calibration produces item diagnostics and objective-level flags; any changes to items, objective mappings, or thresholds are versioned with effective dates and do not revoke previously earned XP/badges/certificates; certificates continue to issue only when predefined mastery criteria are met and advisor validation is recorded.
+3) Cohort momentum is updated solely by objective-mapped, shared-XP peer study and discussion quests; if leaderboards are enabled, they display mastery tiers or consistency streaks with cohort scoping and anonymized or opt-in participation, and exclude raw speed/time-on-platform from ranking.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s20__Execution_Log_and_Leaderboard_Design">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s20::Execution Log and Leaderboard Design</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section defines the canonical, auditable execution log and the cohort-scoped leaderboard logic that translate objective-aligned learning activity into visible mastery momentum. The log is the single source of truth for XP, retries, mastery transitions, and instructor validations; leaderboards derive only mastery tier and consistency signals to preserve equity and emphasize deliberate practice over speed.
+
+- Execution event schema (immutable, append-only): event_id, timestamp (UTC), actor_role (learner/instructor), learner_id (with anonymized_key for leaderboard), cohort_id, unit_id, objective_id(s) [required for any XP], action_type (quiz_attempt, applied_activity_submission, study_group_participation, discussion_post, validated_assessment, certificate_validation), outcome summary (score/correctness), feedback_reference (immediate explanation shown: yes/no + artifact_id), retry_index, xp_awarded, xp_decay_factor, cap_applied (yes/no), mastery_state_before/after (per objective), badge_id/certificate_id (if unlocked), advisor_id (for validations), study_group_id/discussion_id (if applicable), evidence_uri/source. Corrections are represented as compensating events; no destructive edits.
+- Logging rules and feedback linkage: all XP-awarding and validation activities are logged at objective granularity; formative quizzes must emit immediate-feedback events on submission; retries increment retry_index and apply diminishing XP via xp_decay_factor; time-on-platform may be recorded for analytics but is never used in leaderboard ranking; backfills/imports capture original action_time in metadata for accurate mastery trajectories.
+- Aggregations from the log (daily minimum cadence): mastery tier per learner = proportion of required core objectives mastered within the selected unit/program (electives reported separately); consistency streak = count of consecutive study periods (e.g., days/weeks) with at least one feedback-cycled learning event (attempt with feedback or validated activity); cohort momentum = coverage of core objectives across the cohort plus participation in study/discussion activities; retry efficiency and time-to-mastery computed for KPIs, not for ranking.
+- Leaderboard design (optional, cohort-scoped): when enabled, displays mastery tiers and consistency streaks only; ties are resolved by breadth across distinct core objectives, then recency of newly achieved mastery; no rankings by raw XP, attempt counts, or speed/time; social contributions (study/discussion) surface as contribution indicators and update cohort momentum without affecting individual rank.
+- Privacy, inclusivity, and visibility: default learner display is anonymized_key; name/identity is opt-in per learner; instructors/advisors always see identified views; views can be filtered by cohort, unit, and objective cluster; learners may opt out of appearing on public cohort boards while still seeing their own metrics; subgroup comparisons (where permissible) are restricted to instructor analytics and never shown on public boards.
+- Instructor audit and certification trail: advisors can query aggregated cohort progress and objective-level mastery, review item-level diagnostics (difficulty/discrimination) and retry efficiency, and append certificate_validation events with advisor_id and rubric/cut-score references; revocations or rubric corrections are logged as compensating validation events to maintain an auditable history.
+
+Acceptance criteria:
+1) The execution log captures all objective-tagged events for quizzes, applied activities, study/discussion participation, validated assessments, and certificate validations with fields for retry_index, xp_awarded, xp_decay_factor, mastery_state_before/after, and advisor_id where applicable; the log is append-only, with corrections represented by compensating events sufficient to recompute KPIs and audit certification.
+2) Leaderboards, when enabled, are generated solely from log-derived mastery tiers and consistency streaks, are cohort-scoped, support anonymized or opt-in identity display, exclude speed/time-based or raw XP rankings, and do not penalize learners for participating in study/discussion activities; ties prefer greater breadth of mastered core objectives.
+3) Formative quiz submissions emit immediate-feedback events and apply diminishing XP on retries; cohort momentum updates from shared XP study/discussion events; instructors can retrieve aggregated cohort progress and objective-level mastery from the log to time interventions and validate certificate issuance.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s04__Participant_Profiles_and_Role_Mapping">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s04::Participant Profiles and Role-Mapping</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section specifies the participant archetypes and their permissions within the scholarly expedition metaphor: learners act as researchers progressing through objective-aligned units; cohorts function as research labs; and instructors serve as advisors who validate mastery, recommend electives, and steward equitable progress. Role definitions are aligned with the MDA framing, ensuring that mechanics (XP, levels, quizzes, study/discussion) yield dynamics (deliberate practice, peer collaboration, elective exploration) and a challenge-centric aesthetic, while preserving auditability, privacy, and instructor visibility over aggregated, objective-level signals.
+
+- Roles and identities:
+  - Learner (researcher): attempts formative quizzes with immediate feedback, submits applied activities, participates in study groups and discussion quests; appears on leaderboards via anonymized_key by default; can opt in to name display; cannot issue validations or grant XP to peers.
+  - Instructor (advisor): reviews aggregated cohort progress, inspects objective-level mastery, validates assessments and certificates; may recommend electives/side-quests based on mastery gaps; always sees identified views; actions are logged with advisor_id.
+  - Cohort (lab) and study groups: cohorts aggregate member progress to compute cohort momentum; study groups are learner sub-collectives for cooperative tasks that award shared XP mapped to objectives; participation updates the cohort progress metric without penalizing any individual.
+  - Program administrator (governance): configures objective taxonomies, XP mappings, and certificate criteria; oversees quality/equity checks and audit trails; does not appear on learner-facing leaderboards.
+
+- Role-to-event mapping (execution log alignment):
+  - Learner emits: quiz_attempt (with immediate feedback), applied_activity_submission, study_group_participation, discussion_post; all XP-awarding events require objective_id(s), retry_index when relevant, and xp_decay_factor on retries.
+  - Instructor emits: validated_assessment and certificate_validation, recorded with advisor_id, rubric/cut-score references, mastery_state transitions, and compensating events for corrections; no destructive edits.
+  - System aggregations compute mastery tiers, consistency streaks, and cohort momentum from the append-only log; time-on-platform is never used for ranking.
+
+- Permissions and safeguards:
+  - Only instructors can transition mastery states via validation and issue certificates; level thresholds and certificates remain strictly tied to predefined, objective-level mastery criteria.
+  - Peer interactions (study/discussion) grant shared XP mapped to objectives but cannot transfer or deduct XP among individuals; no peer endorsements, votes, or reaction counts influence XP or mastery.
+  - Role privileges do not unlock through learner progression; achieving levels or badges never confers evaluative permissions.
+
+- Visibility and privacy by role:
+  - Leaderboards (when enabled) display only mastery tiers and consistency streaks, are cohort-scoped, and default to anonymized keys; learners may opt in to identity display or opt out of appearing on public cohort boards while retaining personal dashboards.
+  - Instructors access identified, aggregated analytics at the cohort and objective levels (e.g., mastery rates, time-to-mastery, retry efficiency, participation in study/discussion), supporting timely, equitable interventions; subgroup comparisons, where permissible, are restricted to instructor analytics and are never public.
+
+- Motivation profiles and guidance:
+  - Achiever: XP and levels strictly map to learning objectives; certificates at mastery waypoints; instructors can surface next-objective recommendations.
+  - Socializer: structured study groups and discussion quests with shared XP and explanation-as-learning prompts.
+  - Free Spirit: elective side-quests and optional objective clusters; advisors can suggest electives aligned to interests or mastery gaps without gating core progression.
+
+- Equity and auditability:
+  - All XP-awarding items are objective-tagged; retries apply calibrated XP decay to privilege reflection over grinding.
+  - An auditable trail exists for all validations and corrections via compensating events; breadth across distinct core objectives breaks leaderboard ties before recency, never raw XP or speed.
+
+Acceptance criteria:
+1) Roles and permissions are formally defined such that only instructors (advisor role) can emit validated_assessment and certificate_validation events with advisor_id and rubric/cut-score references; all learner XP-awarding events include objective_id(s), immediate-feedback linkage for quizzes, retry_index, and xp_decay_factor on retries, recorded in an append-only log with compensating events for corrections.
+2) Leaderboard visibility adheres to privacy constraints: default learner display uses anonymized_key with opt-in identity; boards are cohort-scoped and show only mastery tiers and consistency streaks; participation in study/discussion never reduces individual XP or rank; instructors access identified, aggregated cohort and objective-level analytics but no speed/time-based rankings.
+3) Study groups and discussion quests are modeled as learner activities that award shared XP mapped to objectives and update the cohort progress metric without affecting individual standings beyond earned XP; no peer-to-peer XP transfers or penalties exist; membership changes do not alter previously earned XP; all such interactions are logged at objective granularity to support KPI computation and audit.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s12__Tangible_Elements_and_Environmental_Setup">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s12::Tangible Elements and Environmental Setup</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This section specifies the concrete artifacts, configurations, and spaces required to operationalize the scholarly expedition narrative: objective-aligned XP, levels, formative feedback, and social learning are grounded in auditable data capture and cohort-scoped visibility. Tangible elements ensure instructors can validate mastery and cohorts can observe momentum without privileging speed, while optional leaderboards and electives are surfaced through controlled, privacy-respecting displays.
+
+- Objective–XP ledger per unit: a canonical artifact listing measurable objectives, 1:1 XP mappings (including caps and retry decay parameters), level thresholds, and rubric/cut-score references that roll up to certificate conditions; published to learners and advisors and versioned for audit.
+- Assessment and feedback assets: formative quiz item banks with explanatory feedback artifacts, applied activity templates tied to objectives, and validation workflows for summative assessments; all configured to emit immediate-feedback events and apply diminishing XP on retries.
+- Social learning kits: peer study group charters (group size, roles, objective targets, shared XP rules) and discussion quest prompts mapped to objectives; participation events increment the cohort progress metric and award shared XP without reducing any individual’s XP or grades.
+- Recognition materials: badge taxonomy (objective clusters, engagement streaks) and certificate templates per unit/program; issuance requires meeting mastery thresholds and recording an advisor validation entry in the audit trail, with revocations handled via compensating events.
+- Execution log and data governance: an append-only, objective-granular event pipeline using the defined schema (retry_index, xp_awarded, xp_decay_factor, mastery_state_before/after, feedback_reference, advisor_id, etc.); UTC timestamps, compensating-event policy for corrections, and daily aggregations feeding KPIs.
+- Cohort environment provisioning: cohort-scoped “lab” spaces for study and discussion, elective catalogs linked to objective clusters, scheduled study periods that define consistency streaks, and instructor access to aggregated cohort and objective-level mastery signals for timely intervention.
+- Leaderboard and visibility settings (optional): cohort-scoped displays limited to mastery tiers and consistency streaks, defaulting to anonymized keys with opt-in identity; ties resolved by breadth across core objectives; no rankings by raw XP, attempt counts, or time-on-platform.
+- Equity and accessibility safeguards: objective tagging required for any XP award, privacy defaults aligned with anonymization guidance, inclusive participation options (opt-out of public boards while retaining personal metrics), and prohibition of speed/time proxies in performance signaling.
+
+Acceptance criteria:
+1) For every unit, an objective–XP ledger exists and is accessible to learners and instructors, documenting 1:1 objective tags, caps, retry decay parameters, level thresholds, and certificate mastery criteria; certificates issue only upon meeting the defined mastery set with recorded advisor validation.
+2) Each unit ships with at least one configured peer study group activity and one discussion quest mapped to explicit objectives; participation events award shared XP, update the cohort progress metric, and do not reduce any learner’s XP or grades; all such events are captured in the execution log at objective granularity.
+3) Formative quizzes are configured to provide immediate explanatory feedback and permit retries with diminishing XP; the execution log records required fields (including retry_index, xp_awarded, xp_decay_factor, mastery_state transitions, and feedback_reference); when enabled, leaderboards are cohort-scoped, anonymized or opt-in, display only mastery tiers/consistency streaks, and instructors can retrieve aggregated cohort progress and objective-level mastery to time interventions and validate certificates.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s05__Core_Gamification_Ontology__concept_to_game_element_mappings_">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s05::Core Gamification Ontology (concept-to-game-element mappings)</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This ontology specifies how core learning constructs map to game elements under the MDA lens so that mechanics (XP, levels, quizzes, certificates, study groups) reliably express objective-aligned evidence, drive collaborative and elective dynamics, and yield a challenge-centric aesthetic with immediate feedback and visible cohort momentum, while preserving auditability and instructor validation.
+
+- Learning objective → atomic XP track and mastery state: every XP grant is tagged 1:1 to objective_id; retries apply xp_decay_factor and caps to deter grinding; objective mastery can unlock badges for objective clusters; objective mastery aggregates to unit levels and certificate eligibility.
+- Curriculum unit/program → level thresholds and certificates: unit level thresholds equal predefined mastery criteria across its objectives (rubrics/cut scores); certificates are artifacts unlocked only when criteria are satisfied and are finalized via advisor validation; electives are modeled as optional objective clusters (side-quests) contributing XP/badges without gating core unit certification.
+- Assessment artifacts → challenge mechanics with feedback: formative_quiz, applied_activity, and validated_assessment map to objective-tagged challenges that emit immediate explanatory feedback; retries increment retry_index with diminishing XP; validated_assessment outcomes can transition mastery and support certification readiness.
+- Cohort and study group → cooperative questing and momentum: cohorts are social containers; study_group_participation generates shared XP mapped to targeted objectives and increments a cohort progress metric (cohort momentum); shared XP never reduces any learner’s standing and is tracked separately from individual mastery tiers.
+- Discussion quest → explanation-as-learning signals: discussion_post and discussion_quest participation award objective-tagged shared XP where discourse aligns to objectives; contributions update cohort momentum and surface as social contribution indicators without affecting individual rank computations.
+- Instructor/advisor → validator and auditor: advisors verify mastery evidence and append certificate_validation events with advisor_id and rubric references; they can query aggregated cohort progress and objective-level mastery; advisors cannot award untagged XP—objective_id is mandatory for any XP.
+- Leaderboard entry (optional, cohort-scoped) → mastery tiers and consistency: derived solely from log-aggregated mastery tier (proportion of core objectives mastered) and consistency streak (sustained feedback-cycled activity); ties prefer greater breadth across distinct core objectives, then recency; raw XP, speed/time, or attempt counts are excluded; display defaults to anonymized_key with opt-in identity.
+- Execution log → canonical state transitions and KPI source: all XP-awarding and validation activities are append-only events with objective_id(s), retry_index, xp_awarded, xp_decay_factor, mastery_state_before/after, and advisor_id where applicable; compensating events handle corrections; log-derived aggregations compute KPIs (objective mastery rate, time-to-mastery, retry efficiency, cohort coverage, social participation) at least daily.
+
+Acceptance criteria:
+1) The ontology enumerates and enforces mappings: objective → XP/mastery/badge; unit → level/certificate; assessment → feedback-and-retry challenge; cohort/study/discussion → shared XP and cohort momentum; instructor → validator; leaderboard → mastery tier/consistency only; all XP-awarding events require objective_id and respect xp_decay_factor and caps.
+2) Each unit includes at least one study group activity and one discussion quest mapped to explicit objectives that award shared XP and update the cohort progress metric; shared XP never reduces individual XP or grades; electives are modeled as optional objective clusters that grant XP/badges without gating core certification.
+3) Formative quizzes produce immediate explanatory feedback with diminishing XP on retries; certificates unlock only when unit mastery criteria are met and advisor validation is logged; when enabled, leaderboards are cohort-scoped, anonymized or opt-in, exclude speed/time or raw XP rankings, and resolve ties by breadth of mastered core objectives, then recency.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Sec_16_s25__Appendices__Role_sheets__card_catalogs__glossary__references_">
+  <rdf:type rdf:resource="#SpecSection"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">s25::Appendices (Role sheets, card catalogs, glossary, references)</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This appendix consolidates canonical role sheets, objective-aligned template cards, a telemetry/aggregation crib, a glossary, and research references to ensure coherent implementation of the scholarly expedition narrative, auditable evidence of learning, and equitable cohort visibility across corporate and academic contexts.
+
+- Role sheets (researcher/learner; advisor/instructor): responsibilities, permitted actions, and data visibility mapped to the execution log. Learner: attempts quizzes with immediate feedback, submits applied activities, participates in study groups/discussions, views personal mastery tier and consistency streak; appears on cohort leaderboards via anonymized_key unless opt-in named display. Instructor (advisor): reviews aggregated cohort and objective-level mastery, recommends electives, validates certificates via certificate_validation events, and triggers rubric-aligned compensating validation events when needed. Each role maps to log fields actor_role, learner_id/anonymized_key, advisor_id and respects privacy and cohort scoping rules.
+- Objective-aligned activity card catalog (formative quiz, applied activity, validated assessment): required fields include unit_id; objective_id(s) [mandatory for XP]; XP_base; xp_decay_factor rule for retries; cap_applied policy; feedback_reference (immediate explanation artifact); mastery_criterion (rubric/cut-score); evidence_uri policy; retry_index handling; and badge_linkage (if any). Cards specify how mastery_state_before/after transitions are computed and ensure XP awards only when objective tags are present.
+- Social quest templates (peer study group, discussion quest): fields include unit_id; objective_id(s); study_group_id/discussion_id; shared_XP rule (credit to each participant without penalizing standings); cohort_momentum_increment; participation criteria (e.g., explanation quality rubric); evidence_uri; facilitation/ethics notes. Templates clarify aggregation to cohort coverage and exclude any effect on individual ranks beyond permissible contribution indicators.
+- Certificate and badge rule templates: unit/program certificate definitions list the objective set required, mastery thresholds per objective, roll-up logic to level thresholds, advisor validation requirement (advisor_id, rubric reference), issuance/revocation as append-only events, and audit fields (timestamp_UTC, badge_id/certificate_id). Badges indicate objective clusters or engagement streaks without inflating grades.
+- Telemetry and aggregation crib: reproduces the immutable execution event schema (event_id, timestamp_UTC, actor_role, learner_id/anonymized_key, cohort_id, unit_id, objective_id(s), action_type, outcome summary, feedback_reference, retry_index, xp_awarded, xp_decay_factor, cap_applied, mastery_state_before/after, badge_id/certificate_id, advisor_id, study_group_id/discussion_id, evidence_uri/source) and the non-destructive correction model (compensating events). Lists derived computations: mastery tier (proportion of required core objectives mastered), consistency streak (consecutive study periods with feedback-cycled events), cohort momentum (core objective coverage plus social participation), and KPI set (objective mastery rate, median time-to-mastery, retry efficiency, participation, elective engagement, XP alignment index).
+- Leaderboard policy appendix: optional, cohort-scoped views that display mastery tiers and consistency streaks only; default anonymized display with learner opt-in to identity; tie-breakers by breadth across distinct core objectives, then recency of newly achieved mastery; explicit exclusions of raw XP, attempt counts, or speed/time-on-platform; participation in study/discussion never penalizes rank and only updates cohort momentum and contribution indicators.
+- Glossary (canonical terms): learning objective; objective_id; XP; XP_base; xp_decay_factor; cap_applied; mastery (objective-level); level threshold; mastery tier; consistency streak; cohort momentum; retry_index; retry efficiency; time-to-mastery; XP alignment index; study group; discussion quest; elective/side-quest; validated assessment; certificate_validation; compensating event; anonymized_key; cohort coverage.
+- References (foundational evidence base): Hunicke, LeBlanc, Zubek (2004) MDA; Bloom (1968) Mastery Learning; Shute (2008) formative feedback; Ericsson, Krampe, Tesch-Römer (1993) deliberate practice; Roediger &amp; Karpicke (2006) retrieval practice; Mazur (1997) Peer Instruction; Crouch &amp; Mazur (2001) peer instruction outcomes; Johnson, Johnson, &amp; Smith (1998) cooperative learning; Hattie &amp; Timperley (2007) feedback; Inclusive analytics/leaderboards guidelines from educational equity literature (e.g., Ito et al., 2020, connected learning).
+
+Acceptance criteria:
+1) Role sheets explicitly enumerate actions and data visibility for learners and instructors in terms of execution log fields and leaderboard privacy (default anonymized_key, cohort scoping), and include advisor certificate validation and compensating validation workflows consistent with the append-only log.
+2) Card catalogs for formative quizzes, applied activities, validated assessments, and social quests require objective_id tags, XP_base, xp_decay_factor, cap_applied, feedback_reference, and evidence_uri; social templates grant shared XP and specify cohort_momentum_increment; certificate templates bind mastery criteria to instructor validation and auditable issuance/revocation events.
+3) The glossary covers at minimum mastery tier, consistency streak, cohort momentum, retry efficiency, time-to-mastery, XP alignment index, xp_decay_factor, cap_applied, compensating event, and anonymized_key; references include MDA, mastery learning, deliberate practice, formative feedback, retrieval practice, and peer/cooperative learning, with terminology aligned to the narrative, KPI, leaderboard, and objectives sections.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Leaderboard_16">
+  <rdf:type rdf:resource="#Leaderboard"/>
+  <realizedAsUI rdf:resource="#LeaderboardUI_16"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#LeaderboardUI_16">
+  <rdf:type rdf:resource="#UIComponent"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#KPI_WeeklyPoints_16">
+  <rdf:type rdf:resource="#KPI"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#KpiDashboardUI_16">
+  <rdf:type rdf:resource="#UIComponent"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#NarrativePanelUI_16">
+  <rdf:type rdf:resource="#UIComponent"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Badge_16">
+  <rdf:type rdf:resource="#Badge"/>
+  <realizedAsUI rdf:resource="#BadgeGalleryUI_16"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#BadgeGalleryUI_16">
+  <rdf:type rdf:resource="#UIComponent"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Points_16">
+  <rdf:type rdf:resource="#Points"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

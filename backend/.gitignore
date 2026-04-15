@@ -1,0 +1,4 @@
+data/preview_telemetry.jsonl
+__pycache__/
+*.pyc
+.env
